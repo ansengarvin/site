@@ -4,7 +4,7 @@ import { RouterProvider } from 'react-router-dom'
 import {Global, css} from '@emotion/react'
 
 import {router} from './router.jsx'
-import { color_background, color_text } from './variables.jsx'
+import { color_background, color_text } from './variables/colors.jsx'
 
 const globalStyle = css`
   html, body {
@@ -14,6 +14,14 @@ const globalStyle = css`
 
     background-color: ${color_background};
     color: ${color_text};
+
+    h1 {
+      font-family: "Saira Extra Condensed", serif;
+      font-size: 4rem;
+      font-weight: normal;
+      font-style: normal;
+      margin: 0;
+    }
   }
 `
 

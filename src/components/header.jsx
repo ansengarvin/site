@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
 import styled from "@emotion/styled";
 
-import { color_element, color_element_text, color_offwhite, color_title } from "../variables";
+import { color_element, color_element_text, color_offwhite, color_title } from "../variables/colors";
 
 const Headerbar = styled.div`
     grid-area: header;
