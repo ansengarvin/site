@@ -1,7 +1,10 @@
-import { createBrowserRouter } from "react-router-dom"
+import { createBrowserRouter, Navigate} from "react-router-dom"
 import {Root} from "./components/root.jsx"
 import {TrekPanel} from "./components/trekpanel.jsx"
 import {Home} from "./routes/home.jsx"
+import {Projects} from "./routes/projects.jsx"
+import {Other} from "./routes/other.jsx"
+import {Connect} from "./routes/connect.jsx"
 
 export const router = createBrowserRouter([
     {
@@ -15,7 +18,11 @@ export const router = createBrowserRouter([
         </Root>
       ),
       children: [
-        {index: true, element: <Home />}
+        {index: true, element: <Home />},
+        {path: "projects", element: <Projects />},
+        {path: "other", element: <Other />},
+        {path: "connect", element: <Connect />},
+        {path: "contact", element: <Navigate to="/connect"/>}
       ]
   }
 ])
