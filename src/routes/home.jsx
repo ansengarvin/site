@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 
-import { color_background, color_element, color_element_text, color_offwhite, color_title, color_gradient_A} from "../variables/colors";
+import { color_background, color_element, color_element_text, color_offwhite, color_title, color_gradient_A, color_title_hover, color_title_active} from "../variables/colors";
 import { laptop, tablet, phone } from "../variables/screens";
 import { NavLink } from "react-router-dom";
 
@@ -123,7 +123,7 @@ const NavWrapper = styled.div`
 
   nav {
     margin-top: 5rem;
-    padding-bottom: 10px;
+    padding-bottom: 15px;
     background-color: ${color_background};
     width: 100%;
     height: min-content;
@@ -134,15 +134,14 @@ const NavWrapper = styled.div`
 
   a {
     font-family: "Saira Extra Condensed", serif;
-    font-size: 4rem;
+    font-size: 3.5rem;
     text-decoration: none;
     color: ${color_background};
-    background-color: ${color_title};
 
-    border-radius: 5px;
-    height: 100px;
+    height: 5rem;
     width: 100%;
-    margin-top: 10px;
+    margin-top: 15px;
+
     @media (max-width: ${phone}) {
       height: 50px;
     }
@@ -150,16 +149,57 @@ const NavWrapper = styled.div`
     display: flex;
     justify-content: right;
     align-items: center;
+    gap: 10px;
 
-    div {
-      margin-right: 10px;
+    div.textbutton {
+      flex-grow: 1;
+      height: 100%;
+      width: auto;
+      border-radius: 5px;
+      background-color: ${color_title};
+
+      display: flex;
+      justify-content: right;
+      align-items: center;
+      padding-right: 10px;
     }
+
+    div.icobutton {
+      height: 100%;
+      aspect-ratio: 1/1;
+      border-radius: 5px;
+      background-color: ${color_title};
+    }
+
+    &:hover {
+      div.textbutton {
+        background-color: ${color_title_hover};
+      }
+      div.icobutton {
+        background-color: ${color_title_hover};
+      }
+    }
+
+    &.active {
+      div.textbutton {
+        background-color: ${color_title_active};
+      }
+      div.icobutton {
+        background-color: ${color_title_active};
+      }
+    }
+
   }
 `
 
+/*
+
+  Content Stuff
+
+*/
 const PageContentWrapper = styled.div`
   grid-area: content;
-  min-height: 40rem;
+  min-height: 50rem;
   //background-color: ${color_element};
   background-image: linear-gradient(${color_gradient_A}, 10%, ${color_title} , 90%, ${color_gradient_A});
   width: 100%;
@@ -174,12 +214,13 @@ const PageContentBlackout = styled.div`
   height: 100%;
   width: 100%;
   border-top-left-radius: 5rem;
+  border-bottom-left-radius: 5rem;
 `
 
 const PageContent = styled.div`
   color: ${color_offwhite};
-  margin-top: 5rem;
-  margin-left: 2rem;
+  margin-top: 2rem;
+  margin-left: 10rem;
   margin-right: 2rem;
 `
 
@@ -203,9 +244,7 @@ const ContentFooterCap = styled.div`
   border-bottom-right-radius: 100%;
 `
 
-
-
-export function Home() {
+export function Home(props) {
   return (
     <PanelGrid>
         <Title>ABOUT</Title>
@@ -214,9 +253,23 @@ export function Home() {
         <NavHeader/>
         <NavWrapper>
           <nav>
-            <NavLink to="/about"><div>Home</div></NavLink>
-            <NavLink to="/projects"><div>Projects</div></NavLink>
-            <NavLink to="/contact"><div>Contact</div></NavLink>
+            <NavLink to="/">
+              <div className="icobutton"/>
+              <div className="textbutton">Home</div>
+            </NavLink>
+            <NavLink to="/projects">
+              <div className="icobutton"/>
+              <div className="textbutton">Projects</div>
+            </NavLink>
+            <NavLink to="/other">
+              <div className="icobutton"/>
+              <div className="textbutton">Other</div>
+            </NavLink>
+            <NavLink to="/contact">
+              <div className="icobutton"/>
+              <div className="textbutton">Contact</div>
+            </NavLink>
+            
           </nav>
         </NavWrapper>
 
