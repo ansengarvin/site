@@ -1,6 +1,7 @@
 import { Outlet } from "react-router-dom"
 import {Header} from "./header.jsx"
 import {Navbar} from "./navbar.jsx"
+import {TrekPanel} from "./trekpanel.jsx"
 import styled from "@emotion/styled"
 
 
@@ -20,7 +21,7 @@ const Grid = styled.div`
 `
 
 export function Root(props) {
-    const {children} = props
+    const {children, title} = props
 
     return (
         <>
@@ -29,7 +30,6 @@ export function Root(props) {
                     <Header/>
                     {children || <Outlet />}
                 </Grid>
-                
             </main>
         </>
     )
