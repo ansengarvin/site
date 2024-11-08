@@ -220,7 +220,7 @@ const PageContentBlackout = styled.div`
 const PageContent = styled.div`
   color: ${color_offwhite};
   margin-top: 2rem;
-  margin-left: 10rem;
+  margin-left: 5rem;
   margin-right: 2rem;
 `
 
