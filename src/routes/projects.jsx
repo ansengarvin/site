@@ -5,6 +5,7 @@ import { color_background, color_element, color_offwhite, color_projects, color_
 
 import nbody from "/nbody.png"
 import gh_comp from "/gh_comp.png"
+import dg from "/daysgone.png"
 
 const ProjectCard = styled.a`
     // Remove all a styles
@@ -17,9 +18,9 @@ const ProjectCard = styled.a`
     height: 400px;
     display: flex;
     flex-direction: column;
-    border-width: 1px;
+    border-width: 0px;
     border-style: solid;
-    border-color: ${color_title};
+    border-color: ${color_background};
     
     a {
         display: inline;
@@ -31,7 +32,7 @@ const ProjectCard = styled.a`
     .foot {
         border-bottom-right-radius: 10px;
         border-bottom-left-radius: 10px;
-        background-color: ${color_title};
+        background-color: ${color_projects};
         height: 130px;
         padding-left: 10px;
         padding-right: 10px;
@@ -114,8 +115,8 @@ export function Projects() {
             <ProjectWrapper>
                 <Project
                     title="Forestcraft Logworks"
-                    subtitle="Short-Term Contract"
-                    description="A website for a local construction company to display their work."
+                    subtitle="Web Developer"
+                    description="A website for a local construction business."
                     href="https://fclogworks.com"
                     
                 />
@@ -144,6 +145,9 @@ export function Projects() {
                     title="Day's Gone"
                     subtitle="Quality Assurance Analyst"
                     description="Role: QA Analyst."
+                    src={dg}
+                    alt="Days Gone Logo"
+                    href="https://www.bendstudio.com/game/days-gone"
                 />
             </ProjectWrapper>
         </TrekPanel>

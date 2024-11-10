@@ -8,5 +8,5 @@ export const color_text = "#17171a";
 export const color_element_text = "#968717";
 export const color_offwhite = "#e4e4e4";
 
-export const color_projects = "#9d7dda";
+export const color_projects = "#5093b3";
 export const color_projects_hover = "#c1a1fc";

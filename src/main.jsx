@@ -15,8 +15,10 @@ const globalStyle = css`
     background-color: ${color_background};
     color: ${color_text};
 
+    font-family: "Roboto", sans-serif;
+
     h1 {
-      font-family: "Saira Extra Condensed", serif;
+      font-family: "Saira Extra Condensed", sans-serif;
       font-size: 4rem;
       font-weight: normal;
       font-style: normal;
