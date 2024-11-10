@@ -1,1 +1,6 @@
-
+[submodule "site_dist"]
+	path = site_dist
+	url = https://github.com/ansengarvin/site_dist
+[submodule "dist"]
+	path = dist
+	url = https://github.com/ansengarvin/site_dist
