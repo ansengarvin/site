@@ -258,9 +258,9 @@ export function TrekPanel(props) {
               <div className="icobutton"/>
               <div className="textbutton">Home</div>
             </NavLink>
-            <NavLink to="/projects">
+            <NavLink to="/portfolio">
               <div className="icobutton"/>
-              <div className="textbutton">Projects</div>
+              <div className="textbutton">Portfolio</div>
             </NavLink>
             <NavLink to="/other">
               <div className="icobutton"/>

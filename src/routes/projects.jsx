@@ -6,13 +6,14 @@ import { color_background, color_element, color_offwhite, color_projects, color_
 import nbody from "/nbody.png"
 import gh_comp from "/gh_comp.png"
 import dg from "/daysgone.png"
+import fclogworks from "/fclogworks.png"
 
 const ProjectCard = styled.a`
     // Remove all a styles
     text-decoration: none;   
 
     background-color: #000000;
-    color: ${color_background};
+    color: black;
     border-radius: 10px;
     width: 400px;
     height: 400px;
@@ -33,13 +34,14 @@ const ProjectCard = styled.a`
         border-bottom-right-radius: 10px;
         border-bottom-left-radius: 10px;
         background-color: ${color_projects};
-        height: 130px;
+        height: 135px;
         padding-left: 10px;
         padding-right: 10px;
     }
 
     .preview {
         overflow: hidden;
+        
         width: 100%;
         border-top-right-radius: 10px;
         border-top-left-radius: 10px;
@@ -72,6 +74,7 @@ const ProjectCard = styled.a`
         padding: 0;
         transition: transform 0.3s ease-in-out;
     }
+
     &:hover img {
         transform: scale(1.1);
     }
@@ -103,31 +106,47 @@ const ProjectWrapper = styled.div`
     flex-wrap: wrap;
     justify-content: center;
     gap: 40px;
-    margin-bottom: 100px;
+`
+
+const Separator = styled.div`
+    height: 100px;
 `
 
 
 export function Projects() {
     return (
         <TrekPanel title = "PORTFOLIO">
-            <h1>Projects and Experience</h1>
-
+            <h1>Professional Experience</h1>
             <ProjectWrapper>
                 <Project
                     title="Forestcraft Logworks"
-                    subtitle="Web Developer"
-                    description="A website for a local construction business."
+                    subtitle="Web Consultant"
+                    description="Modernized the website for a local construction company, improving performance and user experience."
+                    src={fclogworks}
+                    alt="Forestcraft Logworks Logo"
                     href="https://fclogworks.com"
                     
                 />
                 <Project
                     title="The Unknown Venome"
-                    subtitle="Senior Capstone Project"
+                    subtitle="Capstone Student"
                     description="A website to store and analyze hundreds of venom proteins from the Venom Biochemsitry Lab at Oregon State University."
                     src={gh_comp}
                     alt="Protein Structure 3D Model"
                     href="https://venome.cqls.oregonstate.edu/"
                 />
+                <Project
+                    title="Days Gone"
+                    subtitle="Quality Assurance Analyst"
+                    description="Role: QA Analyst."
+                    src={dg}
+                    alt="Days Gone Logo"
+                    href="https://www.bendstudio.com/game/days-gone"
+                />
+            </ProjectWrapper>
+
+            <h1>Personal Projects</h1>
+            <ProjectWrapper>
                 <Project
                     title="N-Body Simulation"
                     subtitle="Personal Project"
@@ -141,15 +160,8 @@ export function Projects() {
                     subtitle="Class Project"
                     description="A simplified version of Monopoly, played against an AI controlling a Sphero Bolt robot as its game piece on a physical board."
                 />
-                <Project
-                    title="Day's Gone"
-                    subtitle="Quality Assurance Analyst"
-                    description="Role: QA Analyst."
-                    src={dg}
-                    alt="Days Gone Logo"
-                    href="https://www.bendstudio.com/game/days-gone"
-                />
             </ProjectWrapper>
+            <Separator/>
         </TrekPanel>
     )
 }
