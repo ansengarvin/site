@@ -35,7 +35,7 @@ const PanelGrid = styled.div`
         font-size: 3.5rem;
       }
       @media (max-width: ${tablet}) {
-        font-size: 3.5rem;
+        font-size: 3.0rem;
       }
       @media (max-width: ${phone}) {
         font-size: 2rem;
@@ -49,7 +49,7 @@ const PanelGrid = styled.div`
       font-size: 1.5rem;
 
       @media (max-width: ${phone}) {
-        font-size: 1rem;
+        font-size: 0.90rem;
       }
     }
 `
@@ -286,6 +286,9 @@ const PageContentBlackout = styled.div`
   border-top-left-radius: 75px;
   border-bottom-left-radius: 75px;
 
+  display: flex;
+  justify-content: center;
+
   @media (max-width: ${laptop}) {
     border-top-left-radius: 60px;
     border-bottom-left-radius: 60px;
@@ -302,26 +305,8 @@ const PageContentBlackout = styled.div`
 
 const PageContent = styled.div`
   color: ${color_offwhite};
-  width: 100%;
-  margin-top: 45px;
-  margin-left: 75px;
-  margin-right: 150px;
+  width: 90%;
 
-  @media (max-width: ${laptop}) {
-    margin-left: 50px;
-    margin-right: 70px;
-  }
-
-  @media (max-width: ${tablet}) {
-
-
-  }
-
-  @media (max-width: ${phone}) {
-    margin-top: 15px;
-    margin-left: 10px;
-    margin-right: 1px;
-  }
 `
 
 const NavFooter = styled.div`

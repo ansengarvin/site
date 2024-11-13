@@ -18,8 +18,8 @@ const Grid = styled.div`
     gap: 2rem;
     height: 100%;
 
-    margin-left: 0.5rem;
-    margin-right: 0.5rem;
+    margin-left: 5px;
+    margin-right: 5px;
 `
 
 export function Root(props) {

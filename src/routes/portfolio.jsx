@@ -2,6 +2,7 @@ import styled from "@emotion/styled"
 
 import { TrekPanel } from "../components/trekpanel"
 import { color_background, color_element, color_offwhite, color_projects, color_title } from "../variables/colors"
+import { laptop, tablet, phone } from "../variables/screens";
 
 import nbody from "/nbody.png"
 import gh_comp from "/gh_comp.png"
@@ -18,9 +19,9 @@ const ProjectCard = styled.a`
     border-radius: 10px; 
     width: 400px;
     max-width: 100%;
+    margin-bottom: 10px;
 
     .foot {
-        height: 135px;
         margin-top: 10px;
         padding-left: 10px;
         padding-right: 10px;
@@ -41,7 +42,11 @@ const ProjectCard = styled.a`
     h2 {
         margin: 0;
         padding: 0;
-        
+        font-size: 1.5rem;
+
+        @media (max-width: ${tablet}) {
+            font-size: 1.1rem;
+        }
     }
 
     h3 {
@@ -49,6 +54,10 @@ const ProjectCard = styled.a`
         padding: 0;
         font-style: italic;
         text-emphasis: normal;
+        
+        @media (max-width: ${tablet}) {
+            font-size: 0.95rem;
+        }
     }
 
     p {
@@ -56,6 +65,10 @@ const ProjectCard = styled.a`
         padding: 0;
         margin-top: 5px;
         font-size: 1rem;
+
+        @media (max-width: ${tablet}) {
+            font-size: 0.95rem;
+        }
     }
 
     img {
@@ -88,7 +101,7 @@ function Project(props) {
 }
 
 const ProjectWrapper = styled.div`
-    width: 100%;
+    
     background-color: #1f2026;
     padding: 20px;
     border-radius: 20px;
@@ -108,12 +121,12 @@ export function Projects() {
     const mobile = useOutletContext()
     return (
         <TrekPanel title = "PORTFOLIO" mobile = {mobile}>
-            <h1>Collaborative Experience</h1>
+            <h1>Professional Experience</h1>
             <ProjectWrapper>
                 <Project
                     title="Forest Craft Logworks"
                     subtitle="Web Consultant"
-                    description="Modernized and improved the website for a local construction company."
+                    description="Rebuilt company website. Improved site functionality and performance."
                     src={fclogworks}
                     alt="Forestcraft Logworks Logo"
                     href="https://fclogworks.com"
@@ -122,7 +135,7 @@ export function Projects() {
                 <Project
                     title="The Unknown Venome"
                     subtitle="Capstone Student"
-                    description="A website to store and analyze hundreds of venom proteins from the Venom Biochemsitry Lab at Oregon State University."
+                    description="Designed database to store venom proteins. Created interface to search and visualize protein structures."
                     src={gh_comp}
                     alt="Protein Structure 3D Model"
                     href="https://venome.cqls.oregonstate.edu/"
@@ -130,7 +143,7 @@ export function Projects() {
                 <Project
                     title="Days Gone"
                     subtitle="Quality Assurance Analyst"
-                    description="Role: QA Analyst."
+                    description="Tested and reported bugs for game's initial launch. Followed up on bug fixes and verified solutions."
                     src={dg}
                     alt="Days Gone Logo"
                     href="https://www.bendstudio.com/game/days-gone"
