@@ -2,7 +2,7 @@ import { createBrowserRouter, Navigate} from "react-router-dom"
 import {Root} from "./components/root.jsx"
 import {TrekPanel} from "./components/trekpanel.jsx"
 import {Home} from "./routes/home.jsx"
-import {Projects} from "./routes/projects.jsx"
+import {Projects} from "./routes/portfolio.jsx"
 import {Other} from "./routes/other.jsx"
 import {Connect} from "./routes/connect.jsx"
 

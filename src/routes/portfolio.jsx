@@ -7,6 +7,7 @@ import nbody from "/nbody.png"
 import gh_comp from "/gh_comp.png"
 import dg from "/daysgone.png"
 import fclogworks from "/fclogworks.png"
+import { useOutletContext } from "react-router-dom"
 
 const ProjectCard = styled.a`
     // Remove all a styles
@@ -114,8 +115,9 @@ const Separator = styled.div`
 
 
 export function Projects() {
+    const mobile = useOutletContext()
     return (
-        <TrekPanel title = "PORTFOLIO">
+        <TrekPanel title = "PORTFOLIO" mobile = {mobile}>
             <h1>Professional Experience</h1>
             <ProjectWrapper>
                 <Project

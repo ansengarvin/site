@@ -1,17 +1,18 @@
 import styled from "@emotion/styled"
+import { laptop, tablet, phone } from "../variables/screens";
 
 import { TrekPanel } from "../components/trekpanel"
+import { useOutletContext } from "react-router-dom";
 
 const HomeStyle = styled.div`
-  width: 90%;
-  p {
-    font-size: 1.5em;
-  }
+  width: 100%;
+  
 `
 
-export function Home() {
+export function Home(props) {
+  const mobile = useOutletContext()
   return (
-    <TrekPanel title="WELCOME">
+    <TrekPanel title="WELCOME" mobile={mobile}>
       <HomeStyle>
         <h1>
           Hello. My name is Ansen.

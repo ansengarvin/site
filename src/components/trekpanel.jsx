@@ -7,7 +7,7 @@ import { NavLink, Outlet } from "react-router-dom";
 const nav_width_desktop = "20rem";
 const nav_width_laptop = "15rem";
 const nav_width_tablet = "12rem";
-const nav_width_phone = "6rem";
+const nav_width_phone = "2rem";
 
 /*
 
@@ -20,10 +20,38 @@ const PanelGrid = styled.div`
   display: grid;
   grid-template-areas: 
     "navheader contentheader titleheader titlecap"
-    "navarea content content openspace"
+    "navarea content content content"
     "navfooter contentbottom contentbottom contentcap";
   grid-template-rows: auto 1fr auto;
   grid-template-columns: auto 1fr auto auto;
+
+  h1 {
+      font-family: "Saira Extra Condensed", sans-serif;
+      font-weight: normal;
+      font-style: normal;
+
+      font-size: 4rem;
+      @media (max-width: ${laptop}) {
+        font-size: 3.5rem;
+      }
+      @media (max-width: ${tablet}) {
+        font-size: 3.5rem;
+      }
+      @media (max-width: ${phone}) {
+        font-size: 2rem;
+      }
+      
+      
+      margin: 0;
+    }
+
+    p {
+      font-size: 1.5rem;
+
+      @media (max-width: ${phone}) {
+        font-size: 1rem;
+      }
+    }
 `
 
 /*
@@ -32,7 +60,7 @@ const PanelGrid = styled.div`
 
 */
 const ContentHeader = styled.div`
-  background-image: linear-gradient(225deg, ${color_element}, ${color_gradient_A});
+  background-image: linear-gradient(270deg, ${color_element}, ${color_gradient_A});
   grid-area: contentheader;
 `
 const Title = styled.div`
@@ -41,15 +69,15 @@ const Title = styled.div`
   color: ${color_title};
 
 
-  font-size: 12rem;
-  line-height: 8.5rem;
+  font-size: 8rem;
+  line-height: 6rem;
   @media (max-width: ${laptop}) {
-    font-size: 10rem;
-    line-height: 7.5rem;
-  }
-  @media (max-width: ${tablet}) {
     font-size: 8rem;
     line-height: 6rem;
+  }
+  @media (max-width: ${tablet}) {
+    font-size: 4rem;
+    line-height: 3rem;
   }
   @media (max-width: ${phone}) {
     font-size: 4rem;
@@ -58,7 +86,7 @@ const Title = styled.div`
 
 
   padding: 0rem;
-  font-family: "Saira Extra Condensed", serif;
+  font-family: "Saira Extra Condensed", sans-serif;
   font-weight: normal;
   font-style: normal;
   -webkit-user-select: none; /* Safari */        
@@ -67,12 +95,24 @@ const Title = styled.div`
   user-select: none; /* Standard */
 `
 
+// Round cap on the right side of the title.
 const RightCap = styled.div`
   grid-area: titlecap;
-  width: 5rem;
-  background-color: ${color_element};
-  border-top-right-radius: 100%;
-  border-bottom-right-radius: 100%;
+  width: min-content;
+
+  display: flex;
+  flex-direction: row;
+  
+  div.square{
+    background-color: ${color_element};
+    width: 0px;
+  }
+  div.circle{
+    background-color: ${color_element};
+    width: 50px;
+    border-top-right-radius: 100%;
+    border-bottom-right-radius: 100%;
+  }
 `
 
 /*
@@ -133,17 +173,25 @@ const NavWrapper = styled.div`
   }
 
   a {
-    font-family: "Saira Extra Condensed", serif;
-    font-size: 3.5rem;
     text-decoration: none;
-    color: ${color_background};
-
     height: 5rem;
     width: 100%;
     margin-top: 15px;
 
+    font-family: "Saira Extra Condensed", serif;
+    color: ${color_background};
+    font-size: 3.5rem;
+    @media (max-width: ${laptop}) {
+      font-size: 3rem;
+    }
+
+    @media (max-width: ${tablet}) {
+      font-size: 2.0rem;
+      height: 2.5rem;
+    }
     @media (max-width: ${phone}) {
-      height: 50px;
+      font-size: 1.5rem;
+      height: 2rem;
     }
     
     display: flex;
@@ -213,15 +261,44 @@ const PageContentBlackout = styled.div`
   background-color: ${color_background};
   height: 100%;
   width: 100%;
-  border-top-left-radius: 5rem;
-  border-bottom-left-radius: 5rem;
+  border-top-left-radius: 75px;
+  border-bottom-left-radius: 75px;
+
+  @media (max-width: ${laptop}) {
+    border-top-left-radius: 60px;
+    border-bottom-left-radius: 60px;
+  }
+  @media (max-width: ${tablet}) {
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+  }
+  @media (max-width: ${phone}) {
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+  }
 `
 
 const PageContent = styled.div`
   color: ${color_offwhite};
-  margin-top: 2rem;
-  margin-left: 5rem;
-  margin-right: 2rem;
+  margin-top: 45px;
+  margin-left: 75px;
+  margin-right: 50px;
+
+  @media (max-width: ${laptop}) {
+
+
+  }
+
+  @media (max-width: ${tablet}) {
+
+
+  }
+
+  @media (max-width: ${phone}) {
+    margin-top: 15px;
+    margin-left: 10px;
+    margin-right: 1px;
+  }
 `
 
 const NavFooter = styled.div`
@@ -234,7 +311,7 @@ const NavFooter = styled.div`
 const ContentFooter = styled.div`
   grid-area: contentbottom;
   width: 100%;
-  background-image: linear-gradient(225deg, ${color_element}, ${color_gradient_A});
+  background-image: linear-gradient(270deg, ${color_element}, ${color_gradient_A});
 `
 
 const ContentFooterCap = styled.div`
@@ -245,33 +322,55 @@ const ContentFooterCap = styled.div`
 `
 
 export function TrekPanel(props) {
-  const {children, title} = props
+  const {children, title, mobile} = props
   return (
     <PanelGrid>
         <Title>{title}</Title>
-        <RightCap/>
+        <RightCap>
+          <div className="square"/>
+          <div className="circle"/>
+        </RightCap>
 
         <NavHeader/>
+        
         <NavWrapper>
-          <nav>
-            <NavLink to="/">
-              <div className="icobutton"/>
-              <div className="textbutton">Home</div>
-            </NavLink>
-            <NavLink to="/portfolio">
-              <div className="icobutton"/>
-              <div className="textbutton">Portfolio</div>
-            </NavLink>
-            <NavLink to="/other">
-              <div className="icobutton"/>
-              <div className="textbutton">Other</div>
-            </NavLink>
-            <NavLink to="/connect">
-              <div className="icobutton"/>
-              <div className="textbutton">Connect</div>
-            </NavLink>
-            
-          </nav>
+          {mobile
+            ? // Mobile
+              <nav>
+                <NavLink to="/">
+                  <div className="icobutton"/>
+                </NavLink>
+                <NavLink to="/portfolio">
+                  <div className="icobutton"/>
+                </NavLink>
+                <NavLink to="/other">
+                  <div className="icobutton"/>
+                </NavLink>
+                <NavLink to="/connect">
+                  <div className="icobutton"/>
+                </NavLink>
+              </nav>
+            : // Tablet, Laptop, Desktop
+              <nav>
+                <NavLink to="/">
+                  <div className="icobutton"/>
+                  <div className="textbutton">Home</div>
+                </NavLink>
+                <NavLink to="/portfolio">
+                  <div className="icobutton"/>
+                  <div className="textbutton">Portfolio</div>
+                </NavLink>
+                <NavLink to="/other">
+                  <div className="icobutton"/>
+                  <div className="textbutton">Other</div>
+                </NavLink>
+                <NavLink to="/connect">
+                  <div className="icobutton"/>
+                  <div className="textbutton">Connect</div>
+                </NavLink>
+            </nav>
+          }
+          
         </NavWrapper>
 
         <ContentHeader/>

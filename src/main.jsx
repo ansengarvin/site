@@ -16,14 +16,6 @@ const globalStyle = css`
     color: ${color_text};
 
     font-family: "Roboto", sans-serif;
-
-    h1 {
-      font-family: "Saira Extra Condensed", sans-serif;
-      font-size: 4rem;
-      font-weight: normal;
-      font-style: normal;
-      margin: 0;
-    }
   }
 `
 
