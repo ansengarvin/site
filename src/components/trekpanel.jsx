@@ -4,9 +4,9 @@ import { color_background, color_element, color_element_text, color_offwhite, co
 import { laptop, tablet, phone } from "../variables/screens";
 import { NavLink, Outlet } from "react-router-dom";
 
-const nav_width_desktop = "20rem";
+const nav_width_desktop = "15rem";
 const nav_width_laptop = "15rem";
-const nav_width_tablet = "12rem";
+const nav_width_tablet = "8rem";
 const nav_width_phone = "2rem";
 
 /*
@@ -163,31 +163,49 @@ const NavWrapper = styled.div`
 
   nav {
     margin-top: 5rem;
-    padding-bottom: 15px;
     background-color: ${color_background};
     width: 100%;
     height: min-content;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 15px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+
+    @media (max-width: ${laptop}) {
+      gap: 10px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+    @media (max-width: ${tablet}) {
+      gap: 5px;
+      padding-top: 5px;
+      padding-bottom: 5px;
+    }
     @media (max-width: ${phone}) {
-      margin-top: 5rem;
+      gap: 5px;
+      padding-top: 5px;
+      padding-bottom: 5px;
     }
   }
 
   a {
     text-decoration: none;
-    height: 5rem;
+    
     width: 100%;
-    margin-top: 15px;
-
     font-family: "Saira Extra Condensed", serif;
     color: ${color_background};
-    font-size: 3.5rem;
+    font-size: 3rem;
+    height: 4.5rem;
     @media (max-width: ${laptop}) {
-      font-size: 3rem;
+      font-size: 2rem;
     }
 
     @media (max-width: ${tablet}) {
-      font-size: 2.0rem;
-      height: 2.5rem;
+      font-size: 1.75rem;
+      height: 2.25rem;
     }
     @media (max-width: ${phone}) {
       font-size: 1.5rem;
@@ -210,6 +228,10 @@ const NavWrapper = styled.div`
       justify-content: right;
       align-items: center;
       padding-right: 10px;
+
+      @media (max-width: ${tablet}) {
+        padding-right: 5px;
+      }
     }
 
     div.icobutton {
@@ -280,13 +302,14 @@ const PageContentBlackout = styled.div`
 
 const PageContent = styled.div`
   color: ${color_offwhite};
+  width: 100%;
   margin-top: 45px;
   margin-left: 75px;
-  margin-right: 50px;
+  margin-right: 150px;
 
   @media (max-width: ${laptop}) {
-
-
+    margin-left: 50px;
+    margin-right: 70px;
   }
 
   @media (max-width: ${tablet}) {

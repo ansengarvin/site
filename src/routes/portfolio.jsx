@@ -13,39 +13,25 @@ const ProjectCard = styled.a`
     // Remove all a styles
     text-decoration: none;   
 
-    background-color: #000000;
-    color: black;
-    border-radius: 10px;
+    background-color: #1f2026;
+    color: ${color_offwhite};
+    border-radius: 10px; 
     width: 400px;
-    height: 400px;
-    display: flex;
-    flex-direction: column;
-    border-width: 0px;
-    border-style: solid;
-    border-color: ${color_background};
-    
-    a {
-        display: inline;
-        margin-right: 20px;
-        height: 100%;
-        text-decoration: none;
-    }
+    max-width: 100%;
 
     .foot {
-        border-bottom-right-radius: 10px;
-        border-bottom-left-radius: 10px;
-        background-color: ${color_projects};
         height: 135px;
+        margin-top: 10px;
         padding-left: 10px;
         padding-right: 10px;
     }
 
     .preview {
         overflow: hidden;
-        
-        width: 100%;
-        border-top-right-radius: 10px;
-        border-top-left-radius: 10px;
+        width: 400px;
+        max-width: 100%;
+        aspect-ratio: 4/3;
+        border-radius: 10px;
     }
 
     .foot {
@@ -55,22 +41,26 @@ const ProjectCard = styled.a`
     h2 {
         margin: 0;
         padding: 0;
-        margin-top: 5px;
+        
     }
 
     h3 {
         margin: 0;
         padding: 0;
+        font-style: italic;
+        text-emphasis: normal;
     }
 
     p {
         margin: 0;
         padding: 0;
         margin-top: 5px;
+        font-size: 1rem;
     }
 
     img {
-        height: 270px;
+        width: 100%;
+        aspect-ratio: 4/3;
         margin: 0;
         padding: 0;
         transition: transform 0.3s ease-in-out;
@@ -88,7 +78,6 @@ function Project(props) {
             <div className="preview">
                 <img src = {src} alt = {alt} />
             </div>
-            
             <div className="foot">
                 <h2>{title}</h2>
                 <h3>{subtitle}</h3>
@@ -99,6 +88,7 @@ function Project(props) {
 }
 
 const ProjectWrapper = styled.div`
+    width: 100%;
     background-color: #1f2026;
     padding: 20px;
     border-radius: 20px;
@@ -118,12 +108,12 @@ export function Projects() {
     const mobile = useOutletContext()
     return (
         <TrekPanel title = "PORTFOLIO" mobile = {mobile}>
-            <h1>Professional Experience</h1>
+            <h1>Collaborative Experience</h1>
             <ProjectWrapper>
                 <Project
-                    title="Forestcraft Logworks"
+                    title="Forest Craft Logworks"
                     subtitle="Web Consultant"
-                    description="Modernized the website for a local construction company, improving performance and user experience."
+                    description="Modernized and improved the website for a local construction company."
                     src={fclogworks}
                     alt="Forestcraft Logworks Logo"
                     href="https://fclogworks.com"

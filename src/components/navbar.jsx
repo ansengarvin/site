@@ -6,7 +6,7 @@ const Nav = styled.nav`
     display: flex;
     flex-direction: column;
     height: 100%;
-    margin-left: 5rem;
+    margin-left: 25px;
     
     a {
         //Remove default styling

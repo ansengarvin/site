@@ -2,6 +2,7 @@ import { NavLink } from "react-router-dom";
 import styled from "@emotion/styled";
 
 import { color_element, color_element_text, color_offwhite, color_title } from "../variables/colors";
+import { laptop, tablet, phone } from "../variables/screens";
 
 const Headerbar = styled.div`
     grid-area: header;
@@ -31,10 +32,16 @@ const Headerbar = styled.div`
         align-items: center;
         justify-content: center;
         height: 2rem;
-        width: 10rem;
-        margin-left: 5rem;
+        margin-left: 10px;
 
-        
+        @media (max-width: ${tablet}) {
+            margin-left: 5px;
+        }
+
+        @media (max-width: ${phone}) {
+            margin-left: 0px;
+            font-size: 1rem;
+        }
     }
 `
 
