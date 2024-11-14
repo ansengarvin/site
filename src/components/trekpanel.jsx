@@ -239,6 +239,10 @@ const NavWrapper = styled.div`
       aspect-ratio: 1/1;
       border-radius: 5px;
       background-color: ${color_title};
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
 
     &:hover {
@@ -346,34 +350,34 @@ export function TrekPanel(props) {
             ? // Mobile
               <nav>
                 <NavLink to="/">
-                  <div className="icobutton"/>
+                  <div className="icobutton"><i class="fa-solid fa-house"/></div>
                 </NavLink>
                 <NavLink to="/portfolio">
-                  <div className="icobutton"/>
+                  <div className="icobutton"><i class="fa-solid fa-briefcase"/></div>
                 </NavLink>
                 <NavLink to="/other">
-                  <div className="icobutton"/>
+                  <div className="icobutton"><i class="fa-solid fa-book"/></div>
                 </NavLink>
                 <NavLink to="/connect">
-                  <div className="icobutton"/>
+                  <div className="icobutton"><i class="fa-solid fa-envelope"/></div>
                 </NavLink>
               </nav>
             : // Tablet, Laptop, Desktop
               <nav>
                 <NavLink to="/">
-                  <div className="icobutton"/>
+                  <div className="icobutton"><i class="fa-solid fa-house"/></div>
                   <div className="textbutton">Home</div>
                 </NavLink>
                 <NavLink to="/portfolio">
-                  <div className="icobutton"/>
+                  <div className="icobutton"><i class="fa-solid fa-briefcase"/></div>
                   <div className="textbutton">Portfolio</div>
                 </NavLink>
                 <NavLink to="/other">
-                  <div className="icobutton"/>
+                  <div className="icobutton"><i class="fa-solid fa-book"/></div>
                   <div className="textbutton">Other</div>
                 </NavLink>
                 <NavLink to="/connect">
-                  <div className="icobutton"/>
+                  <div className="icobutton"><i class="fa-solid fa-envelope"/></div>
                   <div className="textbutton">Connect</div>
                 </NavLink>
             </nav>
