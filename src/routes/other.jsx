@@ -7,6 +7,8 @@ export function Other() {
     return (
         <TrekPanel title="OTHER" mobile={mobile}>
             <h1>Other Endeavors</h1>
+
+            <h2>Coming soon...</h2>
         </TrekPanel>
         
     )
