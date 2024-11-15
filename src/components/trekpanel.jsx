@@ -162,7 +162,7 @@ const NavWrapper = styled.div`
   background-image: linear-gradient(${color_gradient_A}, 10%, ${color_title} , 90%, ${color_gradient_A});
 
   nav {
-    margin-top: 5rem;
+    margin-top: 80px;
     background-color: ${color_background};
     width: 100%;
     height: min-content;
@@ -180,11 +180,13 @@ const NavWrapper = styled.div`
       padding-bottom: 10px;
     }
     @media (max-width: ${tablet}) {
+      margin-top: 60px;
       gap: 5px;
       padding-top: 5px;
       padding-bottom: 5px;
     }
     @media (max-width: ${phone}) {
+      margin-top: 20px;
       gap: 5px;
       padding-top: 5px;
       padding-bottom: 5px;
@@ -273,7 +275,7 @@ const NavWrapper = styled.div`
 */
 const PageContentWrapper = styled.div`
   grid-area: content;
-  min-height: 50rem;
+  min-height: 100%;
   //background-color: ${color_element};
   background-image: linear-gradient(${color_gradient_A}, 10%, ${color_title} , 90%, ${color_gradient_A});
   width: 100%;
@@ -313,11 +315,14 @@ const PageContent = styled.div`
 
 `
 
+// Footer stuff
+
 const NavFooter = styled.div`
   grid-area: navfooter;
-  height: 5rem;
   border-bottom-left-radius: 20rem;
   background-color: ${color_gradient_A};
+
+  height: 25px;
 `
 
 const ContentFooter = styled.div`

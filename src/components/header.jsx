@@ -6,12 +6,16 @@ import { laptop, tablet, phone } from "../variables/screens";
 
 const Headerbar = styled.div`
     grid-area: header;
-    height: 3.5rem;
+    height: 45px;
 
     display: flex;
     align-items: center;
 
     border-bottom: 0.25rem solid ${color_offwhite};
+
+    @media (max-width: ${phone}) {
+        height: 30px;
+    }
 
     a {
         //Remove default styling
@@ -40,7 +44,7 @@ const Headerbar = styled.div`
 
         @media (max-width: ${phone}) {
             margin-left: 0px;
-            font-size: 1rem;
+            font-size: 0.95rem;
         }
     }
 `

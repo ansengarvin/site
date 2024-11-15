@@ -18,8 +18,8 @@ export function Home(props) {
           Hello. My name is Ansen.
         </h1>
         <p>
-          I'm a software engineer based in the pacific northwest. I have a passion for creating technology that aims to improve peoples' day-to-day lives.
-          I have experience in mobile, desktop, and full-stack web development. I am always looking for new opportunities to learn and grow as a developer.
+          I'm a software engineer based in the Pacific Northwest. I have a passion for creating technology that aims to improve peoples' day-to-day lives.
+          I have experience in mobile, desktop, and full-stack web development, and I'm always looking for new opportunities to learn and grow as a developer.
         </p>
       </HomeStyle>
       

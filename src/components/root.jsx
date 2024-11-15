@@ -15,8 +15,8 @@ const Grid = styled.div`
         "footer footer";
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto 1fr auto;
-    gap: 2rem;
-    height: 100%;
+    gap: 15px;
+    min-height: 100vh;
 
     margin-left: 5px;
     margin-right: 5px;
