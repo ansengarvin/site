@@ -7,7 +7,7 @@ import { NavLink, Outlet } from "react-router-dom";
 const nav_width_desktop = "15rem";
 const nav_width_laptop = "15rem";
 const nav_width_tablet = "8rem";
-const nav_width_phone = "2.5rem";
+const nav_width_phone = "2rem";
 
 /*
 
@@ -45,29 +45,6 @@ const PanelGrid = styled.div`
       margin: 0;
     }
 
-    h2 {
-      font-weighT: normal;
-      font-style: normal;
-      padding: 0;
-      margin: 0;
-
-      margin-bottom: 2rem;
-
-      font-size: 3rem;
-
-      @media (max-width: ${laptop}) {
-        font-size: 2.5rem;
-      }
-
-      @media (max-width: ${tablet}) {
-        font-size: 2rem;
-      }
-
-      @media (max-width: ${phone}) {
-        font-size: 1.0rem;
-      }
-    }
-
     p {
       font-size: 1.5rem;
 
@@ -103,14 +80,12 @@ const Title = styled.div`
     line-height: 3rem;
   }
   @media (max-width: ${phone}) {
-    font-size: 3.0rem;
-    line-height: 2.3rem;
+    font-size: 4rem;
+    line-height: 3rem;
   }
 
 
   padding: 0rem;
-  padding-left: 3px;
-  padding-right: 3px;
   font-family: "Saira Extra Condensed", sans-serif;
   font-weight: normal;
   font-style: normal;
@@ -236,7 +211,7 @@ const NavWrapper = styled.div`
     }
     @media (max-width: ${phone}) {
       font-size: 1.5rem;
-      height: 2.5rem;
+      height: 2rem;
     }
     
     display: flex;
@@ -329,8 +304,8 @@ const PageContentBlackout = styled.div`
     border-bottom-left-radius: 50px;
   }
   @media (max-width: ${phone}) {
-    border-top-left-radius: 15px;
-    border-bottom-left-radius: 15px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
   }
 `
 
@@ -363,75 +338,8 @@ const ContentFooterCap = styled.div`
   border-bottom-right-radius: 100%;
 `
 
-function NavButtons(props) {
-  const {mobile, type} = props
-  if (type=="other") {
-    return (
-      <NavWrapper>
-        {mobile
-              ? // Mobile
-                <nav>
-                  <NavLink to="/misc">
-                    <div className="icobutton"><i className="fa-solid fa-left-long"></i></div>
-                  </NavLink>
-                </nav>
-              : // Tablet, Laptop, Desktop
-                <nav>
-                  <NavLink to="/misc">
-                    <div className="textbutton">Back</div>
-                    <div className="icobutton"><i className="fa-solid fa-left-long"></i></div>
-                    
-                  </NavLink>
-              </nav>
-            }    
-      </NavWrapper>
-    )
-  } else {
-    return (
-      <NavWrapper>
-            {mobile
-              ? // Mobile
-                <nav>
-                  <NavLink to="/">
-                    <div className="icobutton"><i className="fa-solid fa-house"/></div>
-                  </NavLink>
-                  <NavLink to="/portfolio">
-                    <div className="icobutton"><i className="fa-solid fa-briefcase"/></div>
-                  </NavLink>
-                  <NavLink to="/misc">
-                    <div className="icobutton"><i className="fa-solid fa-book"/></div>
-                  </NavLink>
-                  <NavLink to="/connect">
-                    <div className="icobutton"><i className="fa-solid fa-envelope"/></div>
-                  </NavLink>
-                </nav>
-              : // Tablet, Laptop, Desktop
-                <nav>
-                  <NavLink to="/">
-                    <div className="icobutton"><i className="fa-solid fa-house"/></div>
-                    <div className="textbutton">Home</div>
-                  </NavLink>
-                  <NavLink to="/portfolio">
-                    <div className="icobutton"><i className="fa-solid fa-briefcase"/></div>
-                    <div className="textbutton">Portfolio</div>
-                  </NavLink>
-                  <NavLink to="/misc">
-                    <div className="icobutton"><i className="fa-solid fa-book"/></div>
-                    <div className="textbutton">Misc</div>
-                  </NavLink>
-                  <NavLink to="/connect">
-                    <div className="icobutton"><i className="fa-solid fa-envelope"/></div>
-                    <div className="textbutton">Connect</div>
-                  </NavLink>
-              </nav>
-            }       
-          </NavWrapper>
-    )
-  } 
-}
-
-export function TrekPanel(props) {
-  const {children, title, mobile, type} = props
+export function TrekPanelB(props) {
+  const {children, title, mobile} = props
   return (
     <PanelGrid>
         <Title>{title}</Title>
@@ -441,8 +349,46 @@ export function TrekPanel(props) {
         </RightCap>
 
         <NavHeader/>
-        <NavButtons mobile={mobile} type={type}/>
         
+        <NavWrapper>
+          {mobile
+            ? // Mobile
+              <nav>
+                <NavLink to="/">
+                  <div className="icobutton"><i className="fa-solid fa-house"/></div>
+                </NavLink>
+                <NavLink to="/portfolio">
+                  <div className="icobutton"><i className="fa-solid fa-briefcase"/></div>
+                </NavLink>
+                <NavLink to="/other">
+                  <div className="icobutton"><i className="fa-solid fa-book"/></div>
+                </NavLink>
+                <NavLink to="/connect">
+                  <div className="icobutton"><i className="fa-solid fa-envelope"/></div>
+                </NavLink>
+              </nav>
+            : // Tablet, Laptop, Desktop
+              <nav>
+                <NavLink to="/">
+                  <div className="icobutton"><i className="fa-solid fa-house"/></div>
+                  <div className="textbutton">Home</div>
+                </NavLink>
+                <NavLink to="/portfolio">
+                  <div className="icobutton"><i className="fa-solid fa-briefcase"/></div>
+                  <div className="textbutton">Portfolio</div>
+                </NavLink>
+                <NavLink to="/other">
+                  <div className="icobutton"><i className="fa-solid fa-book"/></div>
+                  <div className="textbutton">Other</div>
+                </NavLink>
+                <NavLink to="/connect">
+                  <div className="icobutton"><i className="fa-solid fa-envelope"/></div>
+                  <div className="textbutton">Connect</div>
+                </NavLink>
+            </nav>
+          }
+          
+        </NavWrapper>
 
         <ContentHeader/>
         <PageContentWrapper>

@@ -5,6 +5,8 @@ import {Home} from "./routes/home.jsx"
 import {Projects} from "./routes/portfolio.jsx"
 import {Other} from "./routes/other.jsx"
 import {Connect} from "./routes/connect.jsx"
+import { Recipes } from "./routes/recipes.jsx"
+import { DnD } from "./routes/dnd.jsx"
 
 export const router = createBrowserRouter([
     {
@@ -18,12 +20,18 @@ export const router = createBrowserRouter([
         </Root>
       ),
       children: [
+        // Main Routes
         {index: true, element: <Home />},
         {path: "portfolio", element: <Projects />},
-        {path: "other", element: <Other />},
+        {path: "misc", element: <Other />},
         {path: "connect", element: <Connect />},
+        // Other Routes
+        {path: "recipes", element: <Recipes />},
+        {path: "d&d", element: <DnD/>},
+        // Redirects
         {path: "contact", element: <Navigate to="/connect"/>},
-        {path: "projects", element: <Navigate to="/portfolio"/>}
+        {path: "projects", element: <Navigate to="/portfolio"/>},
+        {path: "dnd", element: <Navigate to="/d&d"/>},
       ]
   }
 ])
