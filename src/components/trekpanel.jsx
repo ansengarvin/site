@@ -407,19 +407,19 @@ function NavButtons(props) {
                 </nav>
               : // Tablet, Laptop, Desktop
                 <nav>
-                  <NavLink to="/">
+                  <NavLink to="/" aria-label="Home Page">
                     <div className="icobutton"><i className="fa-solid fa-house"/></div>
                     <div className="textbutton">Home</div>
                   </NavLink>
-                  <NavLink to="/portfolio">
+                  <NavLink to="/portfolio" aria-label="Ansen's Portfolio">
                     <div className="icobutton"><i className="fa-solid fa-briefcase"/></div>
                     <div className="textbutton">Portfolio</div>
                   </NavLink>
-                  <NavLink to="/misc">
+                  <NavLink to="/misc" aria-label="Miscellaneous hobbies and projects">
                     <div className="icobutton"><i className="fa-solid fa-book"/></div>
                     <div className="textbutton">Misc</div>
                   </NavLink>
-                  <NavLink to="/connect">
+                  <NavLink to="/connect" aria-label="Connect with Ansen">
                     <div className="icobutton"><i className="fa-solid fa-envelope"/></div>
                     <div className="textbutton">Connect</div>
                   </NavLink>
