@@ -1,5 +1,5 @@
 import styled from "@emotion/styled"
-import { laptop, tablet, phone } from "../variables/screens";
+import { laptop, tablet, phone } from "../lib/defines/screenWidths";
 
 import { TrekPanel } from "../components/trekpanel"
 import { useOutletContext } from "react-router-dom";

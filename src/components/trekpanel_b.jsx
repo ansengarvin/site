@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 
-import { color_background, color_element, color_element_text, color_offwhite, color_title, color_gradient_A, color_title_hover, color_title_active} from "../variables/colors";
-import { laptop, tablet, phone } from "../variables/screens";
+import { color_background, color_element, color_element_text, color_offwhite, color_title, color_gradient_A, color_title_hover, color_title_active} from "../lib/defines/colors";
+import { laptop, tablet, phone } from "../lib/defines/screenWidths";
 import { NavLink, Outlet } from "react-router-dom";
 
 const nav_width_desktop = "15rem";

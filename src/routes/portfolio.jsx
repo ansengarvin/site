@@ -1,8 +1,8 @@
 import styled from "@emotion/styled"
 
 import { TrekPanel } from "../components/trekpanel"
-import { color_background, color_element, color_offwhite, color_projects, color_title } from "../variables/colors"
-import { laptop, tablet, phone } from "../variables/screens";
+import { color_background, color_element, color_offwhite, color_projects, color_title } from "../lib/defines/colors"
+import { laptop, tablet, phone } from "../lib/defines/screenWidths";
 
 import nbody from "/nbody.png"
 import gh_comp from "/gh_comp.png"

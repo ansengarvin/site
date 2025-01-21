@@ -2,7 +2,7 @@ import styled from "@emotion/styled"
 
 import { TrekPanel } from "../components/trekpanel"
 import { useOutletContext } from "react-router-dom"
-import { color_projects } from "../variables/colors"
+import { color_projects } from "../lib/defines/colors"
 
 
 const ContactCard = styled.a`

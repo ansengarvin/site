@@ -1,9 +1,9 @@
 import styled from "@emotion/styled";
 import { TrekPanel } from "../components/trekpanel";
 import { useOutletContext } from "react-router-dom";
-import { color_offwhite, color_element } from "../variables/colors"
+import { color_offwhite, color_element } from "../lib/defines/colors"
 
-import {laptop, tablet, phone} from "../variables/screens"
+import {laptop, tablet, phone} from "../lib/defines/screenWidths"
 
 const MiscWrapper = styled.div`
     display: flex;
