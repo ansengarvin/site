@@ -175,6 +175,7 @@ export function NavBar(props) {
                       <HomeIcon
                           color={color_background}
                           filled={true}
+                          dim={"85%"}
                       />
                     </div>
                   </NavLink>
@@ -183,22 +184,24 @@ export function NavBar(props) {
                         <BriefcaseIcon
                             color={color_background}
                             filled={true}
+                            dim={"85%"}
                         />
                     </div>
                   </NavLink>
-                  <NavLink to="/misc" aria-label="Miscellaneous hobbies and projects">
+                  {/* <NavLink to="/misc" aria-label="Miscellaneous hobbies and projects">
                     <div className="icobutton">
                         <BookIcon
                             color={color_background}
                             filled={true}
                         />
                     </div>
-                  </NavLink>
+                  </NavLink> */}
                   <NavLink to="/connect" aria-label="Connect with Ansen">
                     <div className="icobutton">
                         <EnvelopeIcon
                             color={color_background}
                             filled={true}
+                            dim={"85%"}
                         />
                     </div>
                   </NavLink>
@@ -210,6 +213,7 @@ export function NavBar(props) {
                         <HomeIcon
                             color={color_background}
                             filled={true}
+                            dim={"85%"}
                         />
                     </div>
                     <div className="textbutton">Home</div>
@@ -219,13 +223,14 @@ export function NavBar(props) {
                       <BriefcaseIcon
                           color={color_background}
                           filled={true}
+                          dim={"85%"}
                         />
                     </div>
                     <div className="textbutton">
                         Portfolio
                     </div>
                   </NavLink>
-                  <NavLink to="/misc" aria-label="Miscellaneous hobbies and projects">
+                  {/* <NavLink to="/misc" aria-label="Miscellaneous hobbies and projects">
                     <div className="icobutton">
                         <BookIcon
                             color={color_background}
@@ -235,12 +240,13 @@ export function NavBar(props) {
                     <div className="textbutton">
                         Misc
                     </div>
-                  </NavLink>
+                  </NavLink> */}
                   <NavLink to="/connect" aria-label="Connect with Ansen">
                     <div className="icobutton">
                         <EnvelopeIcon
                             color={color_background}
                             filled={true}
+                            dim={"85%"}
                         />
                     </div>
                     <div className="textbutton">
