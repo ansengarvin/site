@@ -178,7 +178,7 @@ export function NavBar(props) {
                   </NavLink>
                   <NavLink to="/portfolio" aria-label="Ansen's Portfolio">
                     <div className="icobutton">
-                        <WorkIcon
+                        <BriefcaseIcon
                             color={color_background}
                             filled={true}
                         />
