@@ -141,15 +141,20 @@ export function NavBar(props) {
               ? // Mobile
                 <nav>
                   <NavLink to="/misc">
-                    <div className="icobutton"><i className="fa-solid fa-left-long"></i></div>
+                    <div className="icobutton">
+                        <i className="fa-solid fa-left-long"/>
+                    </div>
                   </NavLink>
                 </nav>
               : // Tablet, Laptop, Desktop
                 <nav>
                   <NavLink to="/misc">
-                    <div className="textbutton">Back</div>
-                    <div className="icobutton"><i className="fa-solid fa-left-long"></i></div>
-                    
+                    <div className="textbutton">
+                        Back
+                    </div>
+                    <div className="icobutton">
+                        <i className="fa-solid fa-left-long"/>
+                    </div> 
                   </NavLink>
               </nav>
             }    
@@ -162,35 +167,57 @@ export function NavBar(props) {
               ? // Mobile
                 <nav>
                   <NavLink to="/" aria-label="Home Page">
-                    <div className="icobutton"><i className="fa-solid fa-house"/></div>
+                    <div className="icobutton">
+                        <i className="fa-solid fa-house"/>
+                    </div>
                   </NavLink>
                   <NavLink to="/portfolio" aria-label="Ansen's Portfolio">
-                    <div className="icobutton"><i className="fa-solid fa-briefcase"/></div>
+                    <div className="icobutton">
+                        <i className="fa-solid fa-briefcase"/>
+                    </div>
                   </NavLink>
                   <NavLink to="/misc" aria-label="Miscellaneous hobbies and projects">
-                    <div className="icobutton"><i className="fa-solid fa-book"/></div>
+                    <div className="icobutton">
+                        <i className="fa-solid fa-book"/>
+                    </div>
                   </NavLink>
                   <NavLink to="/connect" aria-label="Connect with Ansen">
-                    <div className="icobutton"><i className="fa-solid fa-envelope"/></div>
+                    <div className="icobutton">
+                        <i className="fa-solid fa-envelope"/>
+                    </div>
                   </NavLink>
                 </nav>
               : // Tablet, Laptop, Desktop
                 <nav>
                   <NavLink to="/" aria-label="Home Page">
-                    <div className="icobutton"><i className="fa-solid fa-house"/></div>
+                    <div className="icobutton">
+                        <i className="fa-solid fa-house"/>
+                    </div>
                     <div className="textbutton">Home</div>
                   </NavLink>
                   <NavLink to="/portfolio" aria-label="Ansen's Portfolio">
-                    <div className="icobutton"><i className="fa-solid fa-briefcase"/></div>
-                    <div className="textbutton">Portfolio</div>
+                    <div className="icobutton">
+                        <i className="fa-solid fa-briefcase"/>
+                    </div>
+                    <div className="textbutton">
+                        Portfolio
+                    </div>
                   </NavLink>
                   <NavLink to="/misc" aria-label="Miscellaneous hobbies and projects">
-                    <div className="icobutton"><i className="fa-solid fa-book"/></div>
-                    <div className="textbutton">Misc</div>
+                    <div className="icobutton">
+                        <i className="fa-solid fa-book"/>
+                    </div>
+                    <div className="textbutton">
+                        Misc
+                    </div>
                   </NavLink>
                   <NavLink to="/connect" aria-label="Connect with Ansen">
-                    <div className="icobutton"><i className="fa-solid fa-envelope"/></div>
-                    <div className="textbutton">Connect</div>
+                    <div className="icobutton">
+                        <i className="fa-solid fa-envelope"/>
+                    </div>
+                    <div className="textbutton">
+                        Connect
+                    </div>
                   </NavLink>
               </nav>
             }       
