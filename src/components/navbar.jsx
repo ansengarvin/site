@@ -3,7 +3,9 @@ import { NavLink } from "react-router-dom";
 import { navWidthDesktop, navWidthLaptop, navWidthPhone } from "../lib/defines/navWidths"
 import { laptop, tablet, phone } from "../lib/defines/screenWidths";
 import { color_gradient_A, color_background, color_title, color_title_hover, color_title_active } from "../lib/defines/colors";
-
+import { HomeIcon } from "../lib/icons/HomeIcon";
+import { WorkIcon } from "../lib/icons/WorkIcon";
+import { BriefcaseIcon } from "../lib/icons/BriefcaseIcon";
 const NavWrapper = styled.div`
   grid-area: navarea;
   height: 100%;
@@ -168,12 +170,18 @@ export function NavBar(props) {
                 <nav>
                   <NavLink to="/" aria-label="Home Page">
                     <div className="icobutton">
-                        <i className="fa-solid fa-house"/>
+                      <HomeIcon
+                          color={color_background}
+                          filled={true}
+                      />
                     </div>
                   </NavLink>
                   <NavLink to="/portfolio" aria-label="Ansen's Portfolio">
                     <div className="icobutton">
-                        <i className="fa-solid fa-briefcase"/>
+                        <WorkIcon
+                            color={color_background}
+                            filled={true}
+                        />
                     </div>
                   </NavLink>
                   <NavLink to="/misc" aria-label="Miscellaneous hobbies and projects">
@@ -191,13 +199,19 @@ export function NavBar(props) {
                 <nav>
                   <NavLink to="/" aria-label="Home Page">
                     <div className="icobutton">
-                        <i className="fa-solid fa-house"/>
+                        <HomeIcon
+                            color={color_background}
+                            filled={true}
+                        />
                     </div>
                     <div className="textbutton">Home</div>
                   </NavLink>
                   <NavLink to="/portfolio" aria-label="Ansen's Portfolio">
                     <div className="icobutton">
-                        <i className="fa-solid fa-briefcase"/>
+                      <BriefcaseIcon
+                          color={color_background}
+                          filled={true}
+                        />
                     </div>
                     <div className="textbutton">
                         Portfolio
