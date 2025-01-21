@@ -8,6 +8,7 @@ import nbody from "/nbody.png"
 import gh_comp from "/gh_comp.png"
 import dg from "/daysgone.png"
 import fclogworks from "/fclogworks.png"
+import kcalpic from "/kcal.png"
 import { useOutletContext } from "react-router-dom"
 
 const ProjectCard = styled.a`
@@ -121,7 +122,35 @@ export function Projects() {
     const mobile = useOutletContext()
     return (
         <TrekPanel title = "PORTFOLIO" mobile = {mobile}>
-            <h1>Professional Experience</h1>
+            
+            <h1>Projects</h1>
+            <ProjectWrapper>
+                <Project
+                    title="Kilocal Nutrition Tracker"
+                    subtitle="Full-Stack Application"
+                    description="A nutrition tracker, built from the ground up to make calorie and nutrient tracking as easy as possible"
+                    src={kcalpic}
+                    alt="Kilocal Nutrition App Screenshot"
+                    href="https://kcal.ansengarvin.com"
+                />
+                <Project
+                    title="N-Body Simulation"
+                    subtitle="Personal Project"
+                    description="A direct gravitational simulation of the N-Body problem, visualized using OpenGL and parallelized with OpenMP"
+                    src={nbody}
+                    alt="N-Body Simulation Screenshot"
+                    href="https://www.youtube.com/watch?v=XzA_6H3h5Cg"
+                />
+                <Project
+                    title="The Unknown Venome"
+                    subtitle="Senior Capstone Project"
+                    description="Designed database to store venom proteins. Created interface to search and visualize protein structures."
+                    src={gh_comp}
+                    alt="Protein Structure 3D Model"
+                    href="https://venome.cqls.oregonstate.edu/"
+                />
+            </ProjectWrapper>
+            <h1>Experience</h1>
             <ProjectWrapper>
                 <Project
                     title="Forest Craft Logworks"
@@ -133,37 +162,12 @@ export function Projects() {
                     
                 />
                 <Project
-                    title="The Unknown Venome"
-                    subtitle="Capstone Student"
-                    description="Designed database to store venom proteins. Created interface to search and visualize protein structures."
-                    src={gh_comp}
-                    alt="Protein Structure 3D Model"
-                    href="https://venome.cqls.oregonstate.edu/"
-                />
-                <Project
                     title="Days Gone"
                     subtitle="Quality Assurance Analyst"
                     description="Tested and reported bugs for game's initial launch. Followed up on bug fixes and verified solutions."
                     src={dg}
                     alt="Days Gone Logo"
                     href="https://www.bendstudio.com/game/days-gone"
-                />
-            </ProjectWrapper>
-
-            <h1>Personal Projects</h1>
-            <ProjectWrapper>
-                <Project
-                    title="N-Body Simulation"
-                    subtitle="Personal Project"
-                    description="A direct gravitational simulation of the N-Body problem, visualized using OpenGL and parallelized with OpenMP"
-                    src={nbody}
-                    alt="N-Body Simulation Screenshot"
-                    href="https://www.youtube.com/watch?v=XzA_6H3h5Cg"
-                />
-                <Project
-                    title="Spheropoly"
-                    subtitle="Class Project"
-                    description="A simplified version of Monopoly, played against an AI controlling a Sphero Bolt robot as its game piece on a physical board."
                 />
             </ProjectWrapper>
             <Separator/>
