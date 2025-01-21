@@ -6,6 +6,8 @@ import { color_gradient_A, color_background, color_title, color_title_hover, col
 import { HomeIcon } from "../lib/icons/HomeIcon";
 import { WorkIcon } from "../lib/icons/WorkIcon";
 import { BriefcaseIcon } from "../lib/icons/BriefcaseIcon";
+import { BookIcon } from "../lib/icons/BookIcon";
+import { EnvelopeIcon } from "../lib/icons/EnvelopeIcon";
 const NavWrapper = styled.div`
   grid-area: navarea;
   height: 100%;
@@ -186,12 +188,18 @@ export function NavBar(props) {
                   </NavLink>
                   <NavLink to="/misc" aria-label="Miscellaneous hobbies and projects">
                     <div className="icobutton">
-                        <i className="fa-solid fa-book"/>
+                        <BookIcon
+                            color={color_background}
+                            filled={true}
+                        />
                     </div>
                   </NavLink>
                   <NavLink to="/connect" aria-label="Connect with Ansen">
                     <div className="icobutton">
-                        <i className="fa-solid fa-envelope"/>
+                        <EnvelopeIcon
+                            color={color_background}
+                            filled={true}
+                        />
                     </div>
                   </NavLink>
                 </nav>
@@ -219,7 +227,10 @@ export function NavBar(props) {
                   </NavLink>
                   <NavLink to="/misc" aria-label="Miscellaneous hobbies and projects">
                     <div className="icobutton">
-                        <i className="fa-solid fa-book"/>
+                        <BookIcon
+                            color={color_background}
+                            filled={true}
+                        />
                     </div>
                     <div className="textbutton">
                         Misc
@@ -227,7 +238,10 @@ export function NavBar(props) {
                   </NavLink>
                   <NavLink to="/connect" aria-label="Connect with Ansen">
                     <div className="icobutton">
-                        <i className="fa-solid fa-envelope"/>
+                        <EnvelopeIcon
+                            color={color_background}
+                            filled={true}
+                        />
                     </div>
                     <div className="textbutton">
                         Connect
