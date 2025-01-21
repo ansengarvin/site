@@ -1,8 +1,6 @@
 import { Outlet } from "react-router-dom"
 import { useState } from "react"
 import {Header} from "./header.jsx"
-import {Navbar} from "./navbar.jsx"
-import {TrekPanel} from "./trekpanel.jsx"
 import styled from "@emotion/styled"
 
 
