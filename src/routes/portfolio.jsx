@@ -9,6 +9,8 @@ import gh_comp from "/gh_comp.png"
 import dg from "/daysgone.png"
 import fclogworks from "/fclogworks.png"
 import kcalpic from "/kcal.png"
+import powermechsplash from '/powermecharena.png'
+import osuphoto from '/osu.jpg'
 import { useOutletContext } from "react-router-dom"
 
 const ProjectCard = styled.a`
@@ -80,13 +82,17 @@ const ProjectCard = styled.a`
         transition: transform 0.3s ease-in-out;
     }
 
+    i {
+        font-size: 0.75rem;
+    }
+
     &:hover img {
         transform: scale(1.1);
     }
 `
 
 function Project(props) {
-    const {title, subtitle, description, src, alt, href} = props
+    const {title, subtitle, techstack, description, src, alt, href} = props
     return (
         <ProjectCard href={href}>
             <div className="preview">
@@ -95,6 +101,7 @@ function Project(props) {
             <div className="foot">
                 <h2>{title}</h2>
                 <h3>{subtitle}</h3>
+                <i>{techstack}</i>
                 <p>{description}</p>     
             </div>
         </ProjectCard> 
@@ -122,21 +129,61 @@ export function Projects() {
     const mobile = useOutletContext()
     return (
         <TrekPanel title = "PORTFOLIO" mobile = {mobile}>
-            
+            <h1>Professional Timeline</h1>
+            <ProjectWrapper>
+                <Project
+                    title="Forest Craft Logworks"
+                    subtitle="Web Consultant (2024)"
+                    techstack="React.js"
+                    description="Short-term contract. Completely rebuilt the company website from the ground up."
+                    src={fclogworks}
+                    alt="Forestcraft Logworks Logo"
+                    href="https://fclogworks.com"
+                    
+                />
+                <Project
+                    title="Oregon State University"
+                    subtitle="Bachelor's Degree (2020-2024)"
+                    description="Returned to school to obtain my bachelor's degree in Computer Science. Graduated June 2024, cum laude."
+                    src={osuphoto}
+                    alt="Photo of OSU Memorial Union"
+                    href="https://engineering.oregonstate.edu/EECS"  
+                />
+                <Project
+                    title="Days Gone"
+                    subtitle="Quality Assurance Analyst (2017 - 2019)"
+                    techstack="Manual Testing, Bug Reporting, Test Case Planning, Jira"
+                    description="Tested and reported bugs for game's initial launch. Followed up on bug fixes and verified solutions. Consulted with team to review test plans."
+                    src={dg}
+                    alt="Days Gone Logo"
+                    href="https://www.bendstudio.com/game/days-gone"
+                />
+            </ProjectWrapper>
             <h1>Projects</h1>
             <ProjectWrapper>
                 <Project
                     title="Kilocal Nutrition Tracker"
                     subtitle="Full-Stack Application"
+                    techstack="Typescript, React.js, Express.js, PostgreSQL, nginx, AWS, Firebase(auth)"
                     description="A nutrition tracker, built from the ground up to make calorie and nutrient tracking as easy as possible"
                     src={kcalpic}
                     alt="Kilocal Nutrition App Screenshot"
                     href="https://kcal.ansengarvin.com"
                 />
                 <Project
+                    title="PowerMech Arena"
+                    subtitle="Bigmode Game Jam 2025"
+                    techstack="C++, SDL"
+                    description="A game where you battle bosses in a mech arena. Built with small team using a custom-made engine over the course of one week."
+                    src={powermechsplash}
+                    alt="PowerMech Arena Splash Screen Picture"
+                    href="https://countingmouse.itch.io/powermecharena"
+                />
+                <Project
                     title="N-Body Simulation"
                     subtitle="Personal Project"
-                    description="A direct gravitational simulation of the N-Body problem, visualized using OpenGL and parallelized with OpenMP"
+                    techstack="C++, OpenGL, OpenMP, SIMD"
+                    description="A direct gravitational simulation of the N-Body problem, visualized using OpenGL and parallelized with OpenMP and SIMD intrinsics"
                     src={nbody}
                     alt="N-Body Simulation Screenshot"
                     href="https://www.youtube.com/watch?v=XzA_6H3h5Cg"
@@ -144,30 +191,11 @@ export function Projects() {
                 <Project
                     title="The Unknown Venome"
                     subtitle="Senior Capstone Project"
-                    description="Designed database to store venom proteins. Created interface to search and visualize protein structures."
+                    techstack="Svelte, Python(fastAPI), PostgreSQL"
+                    description="Designed database to store venom proteins. Created interface to visualize protein structures. Deployed and used by OSU's Venom Biochemistry Lab."
                     src={gh_comp}
                     alt="Protein Structure 3D Model"
                     href="https://venome.cqls.oregonstate.edu/"
-                />
-            </ProjectWrapper>
-            <h1>Experience</h1>
-            <ProjectWrapper>
-                <Project
-                    title="Forest Craft Logworks"
-                    subtitle="Web Consultant"
-                    description="Rebuilt company website. Improved site functionality and performance."
-                    src={fclogworks}
-                    alt="Forestcraft Logworks Logo"
-                    href="https://fclogworks.com"
-                    
-                />
-                <Project
-                    title="Days Gone"
-                    subtitle="Quality Assurance Analyst"
-                    description="Tested and reported bugs for game's initial launch. Followed up on bug fixes and verified solutions."
-                    src={dg}
-                    alt="Days Gone Logo"
-                    href="https://www.bendstudio.com/game/days-gone"
                 />
             </ProjectWrapper>
             <Separator/>
