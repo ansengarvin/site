@@ -168,7 +168,7 @@ export function Projects() {
                     description="A nutrition tracker, built from the ground up to make calorie and nutrient tracking as easy as possible"
                     src={kcalpic}
                     alt="Kilocal Nutrition App Screenshot"
-                    href="https://kcal.ansengarvin.com"
+                    href="https://github.com/ansengarvin/kilocal"
                 />
                 <Project
                     title="PowerMech Arena"
