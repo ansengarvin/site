@@ -165,7 +165,10 @@ export function Projects() {
                     title="Kilocal Nutrition Tracker"
                     subtitle="Full-Stack Application"
                     techstack="Typescript, React.js, Express.js, PostgreSQL, nginx, AWS, Firebase(auth)"
-                    description="A nutrition tracker, built from the ground up to make calorie and nutrient tracking as easy as possible"
+                    description="
+                        A nutrition tracker, built to make calorie and nutrient tracking as easy as possible.
+                        The website is currently offline, so this links to the repository.
+                    "
                     src={kcalpic}
                     alt="Kilocal Nutrition App Screenshot"
                     href="https://github.com/ansengarvin/kilocal"
