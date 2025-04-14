@@ -19,7 +19,7 @@ const globalStyle = css`
   }
 `
 
-ReactDOM.createRoot(document.getElementById('root')).render(
+ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <Global styles={globalStyle}/>
     <RouterProvider router={router}/>
