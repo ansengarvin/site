@@ -236,13 +236,12 @@ const ContentFooterCap = styled.div`
 interface TrekPanelProps {
   children: React.ReactNode,
   title: string,
-  mobile: boolean,
-  type?: string
+  mobile: boolean
 }
 
 
 export function TrekPanel(props: TrekPanelProps) {
-  const {children, title, mobile, type} = props
+  const {children, title, mobile} = props
   return (
     <PanelGrid>
         <Title>{title}</Title>
@@ -252,7 +251,7 @@ export function TrekPanel(props: TrekPanelProps) {
         </RightCap>
 
         <NavHeader/>
-        <NavBar mobile={mobile} type={type}/>
+        <NavBar mobile={mobile}/>
         <ContentHeader/>
         <PageContentWrapper>
           <PageContentBlackout>

@@ -9,7 +9,7 @@ import { color_offwhite } from "../lib/defines/colors"
 
 export function DnD() {
     return (
-        <TrekPanel title="RECIPES" type={"other"}>
+        <TrekPanel title="RECIPES">
             <h1>Dungeons & Dragons Tools</h1>
             <p>Coming soon...</p>
         </TrekPanel>
