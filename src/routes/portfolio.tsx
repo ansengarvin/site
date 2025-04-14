@@ -4,13 +4,6 @@ import { TrekPanel } from "../components/trekpanel"
 import { color_background, color_element, color_offwhite, color_projects, color_title } from "../lib/defines/colors"
 import { laptop, tablet, phone } from "../lib/defines/screenWidths";
 
-import nbody from "/nbody.png"
-import gh_comp from "/gh_comp.png"
-import dg from "/daysgone.png"
-import fclogworks from "/fclogworks.png"
-import kcalpic from "/kcal.png"
-import powermechsplash from '/powermecharena.png'
-import osuphoto from '/osu.jpg'
 
 const ProjectCard = styled.a`
     // Remove all a styles
@@ -90,7 +83,17 @@ const ProjectCard = styled.a`
     }
 `
 
-function Project(props) {
+interface ProjectProps {
+    title: string,
+    subtitle: string,
+    techstack?: string,
+    description: string,
+    src: string,
+    alt: string,
+    href: string
+}
+
+function Project(props: ProjectProps) {
     const {title, subtitle, techstack, description, src, alt, href} = props
     return (
         <ProjectCard href={href}>
@@ -123,10 +126,9 @@ const Separator = styled.div`
     height: 100px;
 `
 
-
 export function Projects() {
     return (
-        <TrekPanel title = "PORTFOLIO">
+        <TrekPanel title="PORTFOLIO">
             <h1>Professional Timeline</h1>
             <ProjectWrapper>
                 <Project
@@ -134,25 +136,24 @@ export function Projects() {
                     subtitle="Web Consultant (2024)"
                     techstack="React.js"
                     description="Short-term contract. Completely rebuilt the company website from the ground up."
-                    src={fclogworks}
+                    src="/fclogworks.png"
                     alt="Forestcraft Logworks Logo"
                     href="https://fclogworks.com"
-                    
                 />
                 <Project
                     title="Oregon State University"
                     subtitle="Bachelor's Degree (2020-2024)"
                     description="Returned to school to obtain my bachelor's degree in Computer Science. Graduated June 2024, cum laude."
-                    src={osuphoto}
+                    src="/osu.jpg"
                     alt="Photo of OSU Memorial Union"
-                    href="https://engineering.oregonstate.edu/EECS"  
+                    href="https://engineering.oregonstate.edu/EECS"
                 />
                 <Project
                     title="Days Gone"
                     subtitle="Quality Assurance Analyst (2017 - 2019)"
                     techstack="Manual Testing, Bug Reporting, Test Case Planning, Jira"
                     description="Tested and reported bugs for game's initial launch. Followed up on bug fixes and verified solutions. Consulted with team to review test plans."
-                    src={dg}
+                    src="/daysgone.png"
                     alt="Days Gone Logo"
                     href="https://www.bendstudio.com/game/days-gone"
                 />
@@ -167,7 +168,7 @@ export function Projects() {
                         A nutrition tracker, built to make calorie and nutrient tracking as easy as possible.
                         The website is currently offline, so this links to the repository.
                     "
-                    src={kcalpic}
+                    src="/kcal.png"
                     alt="Kilocal Nutrition App Screenshot"
                     href="https://github.com/ansengarvin/kilocal"
                 />
@@ -176,7 +177,7 @@ export function Projects() {
                     subtitle="Bigmode Game Jam 2025"
                     techstack="C++, SDL"
                     description="A game where you battle bosses in a mech arena. Built with small team using a custom-made engine over the course of one week."
-                    src={powermechsplash}
+                    src="/powermecharena.png"
                     alt="PowerMech Arena Splash Screen Picture"
                     href="https://countingmouse.itch.io/powermecharena"
                 />
@@ -185,7 +186,7 @@ export function Projects() {
                     subtitle="Personal Project"
                     techstack="C++, OpenGL, OpenMP, SIMD"
                     description="A direct gravitational simulation of the N-Body problem, visualized using OpenGL and parallelized with OpenMP and SIMD intrinsics"
-                    src={nbody}
+                    src="/nbody.png"
                     alt="N-Body Simulation Screenshot"
                     href="https://www.youtube.com/watch?v=XzA_6H3h5Cg"
                 />
@@ -194,12 +195,12 @@ export function Projects() {
                     subtitle="Senior Capstone Project"
                     techstack="Svelte, Python(fastAPI), PostgreSQL"
                     description="Designed database to store venom proteins. Created interface to visualize protein structures. Deployed and used by OSU's Venom Biochemistry Lab."
-                    src={gh_comp}
+                    src="/gh_comp.png"
                     alt="Protein Structure 3D Model"
                     href="https://venome.cqls.oregonstate.edu/"
                 />
             </ProjectWrapper>
-            <Separator/>
+            <Separator />
         </TrekPanel>
-    )
+    );
 }
