@@ -1,6 +1,6 @@
 import { Outlet } from "react-router-dom"
 import { useState } from "react"
-import {Header} from "./header.jsx"
+import {Header} from "./header.js"
 import styled from "@emotion/styled"
 
 

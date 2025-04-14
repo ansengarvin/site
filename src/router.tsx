@@ -1,12 +1,12 @@
 import { createBrowserRouter, Navigate} from "react-router-dom"
-import {Root} from "./components/root.jsx"
+import {Root} from "./components/root.js"
 import {TrekPanel} from "./components/trekpanel.jsx"
-import {Home} from "./routes/home.jsx"
-import {Projects} from "./routes/portfolio.jsx"
-import {Other} from "./routes/other.jsx"
-import {Connect} from "./routes/connect.jsx"
-import { Recipes } from "./routes/recipes.jsx"
-import { DnD } from "./routes/dnd.jsx"
+import {Home} from "./routes/home.js"
+import {Projects} from "./routes/portfolio.js"
+import {Other} from "./routes/other.js"
+import {Connect} from "./routes/connect.js"
+import { Recipes } from "./routes/recipes.js"
+import { DnD } from "./routes/dnd.js"
 
 export const router = createBrowserRouter([
     {

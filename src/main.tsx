@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client'
 import { RouterProvider } from 'react-router-dom'
 import {Global, css} from '@emotion/react'
 
-import {router} from './router.jsx'
+import {router} from './router.js'
 import { color_background, color_text } from './lib/defines/colors.jsx'
 
 const globalStyle = css`
