@@ -1,7 +1,12 @@
 import styled from "@emotion/styled";
 import { Outlet } from "react-router-dom";
 import { NavBar } from "./navbar";
-import { color_background, color_element, color_gradient_A, color_title} from "../lib/defines/colors";
+import {
+    color_background,
+    color_element,
+    color_gradient_A,
+    color_title,
+} from "../lib/defines/colors";
 import { laptop, phone, tablet } from "../lib/defines/screenWidths";
 
 interface TrekPanelProps {
@@ -10,24 +15,21 @@ interface TrekPanelProps {
 }
 
 export function TrekPanel(props: TrekPanelProps) {
-    const {children, title} = props
+    const { children, title } = props;
     const mobile = window.matchMedia("(max-width: 770px)").matches;
     return (
         <Backdrop>
-            <NavBar mobile={mobile}/>
+            <NavBar mobile={mobile} />
             <Title>
                 {title}
                 <div className="cap"></div>
             </Title>
             <Content>
-                <div>
-                    {children || <Outlet/>}
-                </div>
+                <div>{children || <Outlet />}</div>
             </Content>
-            <DecorativeFootCap/>
+            <DecorativeFootCap />
         </Backdrop>
-    )
-    
+    );
 }
 
 /*
@@ -37,7 +39,7 @@ const Backdrop = styled.div`
     grid-area: main;
     //background-color: ${color_element};
 
-    background: #D69744;
+    background: #d69744;
     background: radial-gradient(
         ellipse 100% 60%,
         ${color_title} 0%,
@@ -62,18 +64,16 @@ const Backdrop = styled.div`
     grid-template-areas:
         "top top title"
         "nav content content"
-        "foot foot foot"
-    ;
+        "foot foot foot";
     grid-template-rows: min-content 1fr 25px;
     grid-template-columns: auto 1fr 1fr;
-`
+`;
 
 const Content = styled.div`
     grid-area: content;
     background-color: ${color_background};
     display: flex;
     justify-content: center;
-
 
     border-top-left-radius: 75px;
     border-bottom-left-radius: 75px;
@@ -120,7 +120,7 @@ const Content = styled.div`
             font-size: 0.9rem;
         }
     }
-`
+`;
 
 const Title = styled.div`
     grid-area: title;
@@ -179,13 +179,12 @@ const DecorativeFootCapStyle = styled.div`
         border-top-right-radius: 80%;
         border-bottom-right-radius: 80%;
     }
-`
+`;
 
 function DecorativeFootCap() {
     return (
         <DecorativeFootCapStyle>
-            <div/>
+            <div />
         </DecorativeFootCapStyle>
-    )
+    );
 }
-

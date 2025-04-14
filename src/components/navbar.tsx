@@ -129,8 +129,7 @@ const NavWrapper = styled.nav`
             }
         }
     }
-        
-`
+`;
 
 interface NavBarProps {
     mobile: boolean;
