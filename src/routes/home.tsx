@@ -1,6 +1,5 @@
 import styled from "@emotion/styled"
 import { TrekPanel } from "../components/trekpanel"
-import { useOutletContext } from "react-router-dom";
 
 const HomeStyle = styled.div`
   width: 100%;
@@ -8,7 +7,6 @@ const HomeStyle = styled.div`
 `
 
 export function Home(props) {
-  const mobile = useOutletContext()
   return (
     <TrekPanel title="WELCOME">
       <HomeStyle>

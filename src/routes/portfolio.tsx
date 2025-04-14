@@ -11,7 +11,6 @@ import fclogworks from "/fclogworks.png"
 import kcalpic from "/kcal.png"
 import powermechsplash from '/powermecharena.png'
 import osuphoto from '/osu.jpg'
-import { useOutletContext } from "react-router-dom"
 
 const ProjectCard = styled.a`
     // Remove all a styles
@@ -126,7 +125,6 @@ const Separator = styled.div`
 
 
 export function Projects() {
-    const mobile = useOutletContext()
     return (
         <TrekPanel title = "PORTFOLIO">
             <h1>Professional Timeline</h1>
