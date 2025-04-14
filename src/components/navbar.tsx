@@ -7,7 +7,6 @@ import {
 } from "../lib/defines/navWidths";
 import { laptop, tablet, phone } from "../lib/defines/screenWidths";
 import {
-    color_gradient_A,
     color_background,
     color_title,
     color_title_hover,

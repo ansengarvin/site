@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 import { Outlet } from "react-router-dom";
 import { NavBar } from "./navbar";
-import { color_background, color_element, color_title} from "../lib/defines/colors";
+import { color_background, color_element, color_gradient_A, color_title} from "../lib/defines/colors";
 import { laptop, phone, tablet } from "../lib/defines/screenWidths";
 
 interface TrekPanelProps {
@@ -23,8 +23,8 @@ export function TrekPanel(props: TrekPanelProps) {
                 <div>
                     {children || <Outlet/>}
                 </div>
-                
             </Content>
+            <DecorativeFootCap/>
         </Backdrop>
     )
     
@@ -35,7 +35,15 @@ export function TrekPanel(props: TrekPanelProps) {
 */
 const Backdrop = styled.div`
     grid-area: main;
-    background-color: ${color_element};
+    //background-color: ${color_element};
+
+    background: #D69744;
+    background: radial-gradient(
+        ellipse 100% 60%,
+        ${color_title} 0%,
+        ${color_gradient_A} 50%,
+        ${color_element} 100%
+    );
     color: white;
     border-top-left-radius: 100px;
     //media radii for top left
@@ -130,3 +138,27 @@ const Title = styled.div`
         background-color: ${color_element};
     }
 `;
+
+const DecorativeFootCapStyle = styled.div`
+    grid-area: foot;
+    background-color: ${color_background};
+    height: 100%;
+    width: 15px;
+    margin-left: auto;
+    div {
+        background-color: ${color_element};
+        height: 100%;
+        width: 100%;
+        border-top-right-radius: 80%;
+        border-bottom-right-radius: 80%;
+    }
+`
+
+function DecorativeFootCap() {
+    return (
+        <DecorativeFootCapStyle>
+            <div/>
+        </DecorativeFootCapStyle>
+    )
+}
+
