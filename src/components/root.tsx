@@ -27,8 +27,7 @@ interface RootProps {
 
 export function Root(props: RootProps) {
     const {children, title} = props
-
-    const [mobile, setMobile] = useState(window.matchMedia("(max-width: 425px)").matches);
+    const mobile = window.matchMedia("(max-width: 425px)").matches
 
     return (
         <>
