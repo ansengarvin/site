@@ -6,6 +6,7 @@ import { color_gradient_A, color_background, color_title, color_title_hover, col
 import { HomeIcon } from "../lib/icons/HomeIcon";
 import { BriefcaseIcon } from "../lib/icons/BriefcaseIcon";
 import { EnvelopeIcon } from "../lib/icons/EnvelopeIcon";
+
 const NavWrapper = styled.div`
   grid-area: navarea;
   height: 100%;
