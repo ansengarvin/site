@@ -1,269 +1,190 @@
 import styled from "@emotion/styled";
-
-import { color_background, color_element, color_offwhite, color_title, color_gradient_A} from "../lib/defines/colors";
-import { laptop, tablet, phone } from "../lib/defines/screenWidths";
 import { Outlet } from "react-router-dom";
-
 import { NavBar } from "./navbar";
-import { navWidthDesktop, navWidthPhone, navWidthTablet } from "../lib/defines/navWidths";
+import {
+    color_background,
+    color_element,
+    color_gradient_A,
+    color_title,
+} from "../lib/defines/colors";
+import { laptop, phone, tablet } from "../lib/defines/screenWidths";
 
+interface TrekPanelProps {
+    children: React.ReactNode;
+    title: string;
+}
 
+export function TrekPanel(props: TrekPanelProps) {
+    const { children, title } = props;
+    const mobile = window.matchMedia("(max-width: 770px)").matches;
+    return (
+        <Backdrop>
+            <NavBar mobile={mobile} />
+            <Title>
+                {title}
+                <div className="cap"></div>
+            </Title>
+            <Content>
+                <div>{children || <Outlet />}</div>
+            </Content>
+            <DecorativeFootCap />
+        </Backdrop>
+    );
+}
 
 /*
-
-  Overarching Griod Layout
-
+    CSS Style
 */
-const PanelGrid = styled.div`
-  grid-area: main;
-  height: 100%;
-  display: grid;
-  grid-template-areas: 
-    "navheader contentheader titleheader titlecap"
-    "navarea content content content"
-    "navfooter contentbottom contentbottom contentcap";
-  grid-template-rows: auto 1fr auto;
-  grid-template-columns: auto 1fr auto auto;
+const Backdrop = styled.div`
+    grid-area: main;
+    //background-color: ${color_element};
 
-  h1 {
-      font-family: "Saira Extra Condensed", sans-serif;
-      font-weight: normal;
-      font-style: normal;
+    background: #d69744;
+    background: radial-gradient(
+        ellipse 100% 60%,
+        ${color_title} 0%,
+        ${color_gradient_A} 50%,
+        ${color_element} 100%
+    );
+    color: white;
+    border-top-left-radius: 100px;
+    //media radii for top left
+    @media (max-width: ${laptop}) {
+        border-top-left-radius: 80px;
+    }
+    @media (max-width: ${tablet}) {
+        border-top-left-radius: 50px;
+    }
+    @media (max-width: ${phone}) {
+        border-top-left-radius: 30px;
+    }
+    border-bottom-left-radius: 25px;
 
-      font-size: 4rem;
-      @media (max-width: ${laptop}) {
-        font-size: 3.5rem;
-      }
-      @media (max-width: ${tablet}) {
-        font-size: 3.0rem;
-      }
-      @media (max-width: ${phone}) {
-        font-size: 2rem;
-      }
-      
-      
-      margin: 0;
+    display: grid;
+    grid-template-areas:
+        "top top title"
+        "nav content content"
+        "foot foot foot";
+    grid-template-rows: min-content 1fr 25px;
+    grid-template-columns: auto 1fr 1fr;
+`;
+
+const Content = styled.div`
+    grid-area: content;
+    background-color: ${color_background};
+    display: flex;
+    justify-content: center;
+
+    border-top-left-radius: 75px;
+    border-bottom-left-radius: 75px;
+    @media (max-width: ${laptop}) {
+        border-top-left-radius: 60px;
+        border-bottom-left-radius: 60px;
+    }
+    @media (max-width: ${tablet}) {
+        border-top-left-radius: 50px;
+        border-bottom-left-radius: 50px;
+    }
+    @media (max-width: ${phone}) {
+        border-top-left-radius: 15px;
+        border-bottom-left-radius: 15px;
     }
 
-    h2 {
-      font-weighT: normal;
-      font-style: normal;
-      padding: 0;
-      margin: 0;
+    div {
+        width: 90%;
+    }
 
-      margin-bottom: 2rem;
+    h1 {
+        font-family: "Saira Extra Condensed", sans-serif;
+        font-weight: normal;
+        font-style: normal;
 
-      font-size: 3rem;
+        font-size: 4rem;
+        @media (max-width: ${laptop}) {
+            font-size: 3.5rem;
+        }
+        @media (max-width: ${tablet}) {
+            font-size: 3rem;
+        }
+        @media (max-width: ${phone}) {
+            font-size: 2rem;
+        }
 
-      @media (max-width: ${laptop}) {
-        font-size: 2.5rem;
-      }
-
-      @media (max-width: ${tablet}) {
-        font-size: 2rem;
-      }
-
-      @media (max-width: ${phone}) {
-        font-size: 1.0rem;
-      }
+        margin: 0;
     }
 
     p {
-      font-size: 1.5rem;
+        font-size: 1.5rem;
 
-      @media (max-width: ${phone}) {
-        font-size: 0.90rem;
-      }
+        @media (max-width: ${phone}) {
+            font-size: 0.9rem;
+        }
     }
-`
+`;
 
-/*
-
-  Title and Top Bar
-
-*/
-const ContentHeader = styled.div`
-  background-image: linear-gradient(270deg, ${color_element}, ${color_gradient_A});
-  grid-area: contentheader;
-`
 const Title = styled.div`
-  grid-area: titleheader;
-  background-color: ${color_background};
-  color: ${color_title};
+    grid-area: title;
+    background-color: ${color_background};
+    color: ${color_title};
+    width: min-content;
+    margin-left: auto;
 
+    display: flex;
 
-  font-size: 8rem;
-  line-height: 6rem;
-  @media (max-width: ${laptop}) {
     font-size: 8rem;
     line-height: 6rem;
-  }
-  @media (max-width: ${tablet}) {
-    font-size: 4rem;
-    line-height: 3rem;
-  }
-  @media (max-width: ${phone}) {
-    font-size: 3.0rem;
-    line-height: 2.3rem;
-  }
+    @media (max-width: ${laptop}) {
+        font-size: 8rem;
+        line-height: 6rem;
+    }
+    @media (max-width: ${tablet}) {
+        font-size: 4rem;
+        line-height: 3rem;
+    }
+    @media (max-width: ${phone}) {
+        font-size: 3rem;
+        line-height: 2.3rem;
+    }
 
+    padding: 0rem;
+    padding-left: 3px;
+    padding-right: 3px;
+    font-family: "Saira Extra Condensed", sans-serif;
+    font-weight: normal;
+    font-style: normal;
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+/Edge */
+    user-select: none; /* Standard */
 
-  padding: 0rem;
-  padding-left: 3px;
-  padding-right: 3px;
-  font-family: "Saira Extra Condensed", sans-serif;
-  font-weight: normal;
-  font-style: normal;
-  -webkit-user-select: none; /* Safari */        
-  -moz-user-select: none; /* Firefox */
-  -ms-user-select: none; /* IE10+/Edge */
-  user-select: none; /* Standard */
-`
+    div.cap {
+        width: 50px;
+        height: 100%;
+        border-top-right-radius: 80%;
+        border-bottom-right-radius: 80%;
+        background-color: ${color_element};
+    }
+`;
 
-// Round cap on the right side of the title.
-const RightCap = styled.div`
-  grid-area: titlecap;
-  width: min-content;
+const DecorativeFootCapStyle = styled.div`
+    grid-area: foot;
+    background-color: ${color_background};
+    height: 100%;
+    width: 15px;
+    margin-left: auto;
+    div {
+        background-color: ${color_element};
+        height: 100%;
+        width: 100%;
+        border-top-right-radius: 80%;
+        border-bottom-right-radius: 80%;
+    }
+`;
 
-  display: flex;
-  flex-direction: row;
-  
-  div.square{
-    background-color: ${color_element};
-    width: 0px;
-  }
-  div.circle{
-    background-color: ${color_element};
-    width: 50px;
-    border-top-right-radius: 100%;
-    border-bottom-right-radius: 100%;
-  }
-`
-
-/*
-
-  Nav Area
-
-*/
-const NavHeader = styled.div`
-  grid-area: navheader;
-  width: ${navWidthDesktop};
-  @media (max-width: ${laptop}) {
-    width: ${navWidthPhone};
-  }
-  @media (max-width: ${tablet}) {
-    width: ${navWidthTablet};
-  }
-  @media (max-width: ${phone}) {
-    width: ${navWidthPhone};
-  }
-
-
-  border-top-left-radius: 20rem;
-  background-color: ${color_gradient_A};
-`
-
-/*
-
-  Content Stuff
-
-*/
-const PageContentWrapper = styled.div`
-  grid-area: content;
-  min-height: 100%;
-  //background-color: ${color_element};
-  background-image: linear-gradient(${color_gradient_A}, 10%, ${color_title} , 90%, ${color_gradient_A});
-  width: 100%;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`
-
-const PageContentBlackout = styled.div`
-  background-color: ${color_background};
-  height: 100%;
-  width: 100%;
-  border-top-left-radius: 75px;
-  border-bottom-left-radius: 75px;
-
-  display: flex;
-  justify-content: center;
-
-  @media (max-width: ${laptop}) {
-    border-top-left-radius: 60px;
-    border-bottom-left-radius: 60px;
-  }
-  @media (max-width: ${tablet}) {
-    border-top-left-radius: 50px;
-    border-bottom-left-radius: 50px;
-  }
-  @media (max-width: ${phone}) {
-    border-top-left-radius: 15px;
-    border-bottom-left-radius: 15px;
-  }
-`
-
-const PageContent = styled.div`
-  color: ${color_offwhite};
-  width: 90%;
-
-`
-
-// Footer stuff
-
-const NavFooter = styled.div`
-  grid-area: navfooter;
-  border-bottom-left-radius: 20rem;
-  background-color: ${color_gradient_A};
-
-  height: 25px;
-`
-
-const ContentFooter = styled.div`
-  grid-area: contentbottom;
-  width: 100%;
-  background-image: linear-gradient(270deg, ${color_element}, ${color_gradient_A});
-`
-
-const ContentFooterCap = styled.div`
-  grid-area: contentcap;
-  background-color: ${color_element};
-  border-top-right-radius: 100%;
-  border-bottom-right-radius: 100%;
-`
-
-interface TrekPanelProps {
-  children: React.ReactNode,
-  title: string
-}
-
-
-export function TrekPanel(props: TrekPanelProps) {
-  const {children, title} = props
-  const mobile = window.matchMedia("(max-width: 425px)").matches
-  return (
-    <PanelGrid>
-        <Title>{title}</Title>
-        <RightCap>
-          <div className="square"/>
-          <div className="circle"/>
-        </RightCap>
-
-        <NavHeader/>
-        <NavBar mobile={mobile}/>
-        <ContentHeader/>
-        <PageContentWrapper>
-          <PageContentBlackout>
-            <PageContent>
-              {children || <Outlet />}
-            </PageContent>
-          </PageContentBlackout>
-        </PageContentWrapper>
-        <NavFooter/>
-        <ContentFooter/>
-        <ContentFooterCap/>
-
-    </PanelGrid>
-  )
+function DecorativeFootCap() {
+    return (
+        <DecorativeFootCapStyle>
+            <div />
+        </DecorativeFootCapStyle>
+    );
 }

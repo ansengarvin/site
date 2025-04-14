@@ -47,12 +47,12 @@ const Headerbar = styled.div`
             font-size: 0.95rem;
         }
     }
-`
+`;
 
 export function Header() {
     return (
         <Headerbar>
             <NavLink to="/">Ansen Garvin</NavLink>
         </Headerbar>
-    )
+    );
 }
