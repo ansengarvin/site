@@ -37,7 +37,7 @@ export function TrekPanel(props: TrekPanelProps) {
     const mobile = window.matchMedia("(max-width: 425px)").matches;
     return (
         <Backdrop>
-            <NavBar/>
+            <NavBar mobile={mobile}/>
             <Content>
                 {children || <Outlet/>}
             </Content>
