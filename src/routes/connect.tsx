@@ -14,7 +14,7 @@ const ContactCard = styled.a`
 `
 
 export function Connect() {
-    const mobile = useOutletContext()
+    const mobile = useOutletContext<{mobile: boolean}>().mobile
     return (
         <TrekPanel title = "CONNECT" mobile={mobile}>
             <h1>Want to get in touch?</h1>
