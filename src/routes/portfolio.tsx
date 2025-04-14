@@ -1,8 +1,8 @@
 import styled from "@emotion/styled"
 
 import { TrekPanel } from "../components/trekpanel"
-import { color_background, color_element, color_offwhite, color_projects, color_title } from "../lib/defines/colors"
-import { laptop, tablet, phone } from "../lib/defines/screenWidths";
+import {color_offwhite} from "../lib/defines/colors"
+import { tablet} from "../lib/defines/screenWidths";
 
 
 const ProjectCard = styled.a`
