@@ -1,4 +1,3 @@
-import React from "react";
 import { IconProps } from "./common/IconProps";
 import { GoogleSVG } from "./common/GoogleSVG";
 
