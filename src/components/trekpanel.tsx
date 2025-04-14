@@ -93,6 +93,33 @@ const Content = styled.div`
     div {
         width: 90%;
     }
+
+    h1 {
+        font-family: "Saira Extra Condensed", sans-serif;
+        font-weight: normal;
+        font-style: normal;
+
+        font-size: 4rem;
+        @media (max-width: ${laptop}) {
+            font-size: 3.5rem;
+        }
+        @media (max-width: ${tablet}) {
+            font-size: 3rem;
+        }
+        @media (max-width: ${phone}) {
+            font-size: 2rem;
+        }
+
+        margin: 0;
+    }
+
+    p {
+        font-size: 1.5rem;
+
+        @media (max-width: ${phone}) {
+            font-size: 0.9rem;
+        }
+    }
 `
 
 const Title = styled.div`
