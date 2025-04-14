@@ -6,7 +6,7 @@ const HomeStyle = styled.div`
   
 `
 
-export function Home(props) {
+export function Home() {
   return (
     <TrekPanel title="WELCOME">
       <HomeStyle>
