@@ -22,6 +22,15 @@ const NavWrapper = styled.nav`
     grid-area: nav;
     background-color: ${color_background};
     width: ${navWidthDesktop};
+    @media (max-width: ${laptop}) {
+        width: ${navWidthLaptop};
+    }
+    @media (max-width: ${tablet}) {
+        width: ${navWidthPhone};
+    }
+    @media (max-width: ${phone}) {
+        width: ${navWidthPhone};
+    }
     height: min-content;
 
     display: flex;
