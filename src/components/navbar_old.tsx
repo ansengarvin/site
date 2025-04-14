@@ -17,36 +17,63 @@ import { HomeIcon } from "../assets/icons/HomeIcon";
 import { BriefcaseIcon } from "../assets/icons/BriefcaseIcon";
 import { EnvelopeIcon } from "../assets/icons/EnvelopeIcon";
 
-const NavWrapper = styled.nav`
-    margin-top: 80px;
-    grid-area: nav;
-    background-color: ${color_background};
+const NavWrapper = styled.div`
+    grid-area: navarea;
+    height: 100%;
     width: ${navWidthDesktop};
-    height: min-content;
+    @media (max-width: ${laptop}) {
+        width: ${navWidthLaptop};
+    }
+    @media (max-width: ${tablet}) {
+        width: ${navWidthPhone};
+    }
+    @media (max-width: ${phone}) {
+        width: ${navWidthPhone};
+    }
 
     display: flex;
     flex-direction: column;
+    justify-content: top;
+    align-items: center;
 
-    gap: 15px;
-    padding-top: 15px;
-    padding-bottom: 15px;
+    background-image: linear-gradient(
+        ${color_gradient_A},
+        10%,
+        ${color_title},
+        90%,
+        ${color_gradient_A}
+    );
 
-    @media (max-width: ${laptop}) {
-        gap: 10px;
-        padding-top: 10px;
-        padding-bottom: 10px;
-    }
-    @media (max-width: ${tablet}) {
-        margin-top: 60px;
-        gap: 5px;
-        padding-top: 5px;
-        padding-bottom: 5px;
-    }
-    @media (max-width: ${phone}) {
-        margin-top: 20px;
-        gap: 5px;
-        padding-top: 5px;
-        padding-bottom: 5px;
+    nav {
+        margin-top: 80px;
+        background-color: ${color_background};
+        width: 100%;
+        height: min-content;
+
+        display: flex;
+        flex-direction: column;
+
+        gap: 15px;
+        padding-top: 15px;
+        padding-bottom: 15px;
+
+        @media (max-width: ${laptop}) {
+            gap: 10px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+        @media (max-width: ${tablet}) {
+            margin-top: 60px;
+            gap: 5px;
+            padding-top: 5px;
+            padding-bottom: 5px;
+        }
+        @media (max-width: ${phone}) {
+            margin-top: 20px;
+            gap: 5px;
+            padding-top: 5px;
+            padding-bottom: 5px;
+        }
     }
 
     a {
@@ -121,8 +148,7 @@ const NavWrapper = styled.nav`
             }
         }
     }
-        
-`
+`;
 
 interface NavBarProps {
     mobile: boolean;
@@ -134,7 +160,7 @@ export function NavBar(props: NavBarProps) {
         <NavWrapper>
             {mobile ? (
                 // Mobile
-                <>
+                <nav>
                     <NavLink to="/" aria-label="Home Page">
                         <div className="icobutton">
                             <HomeIcon
@@ -153,6 +179,14 @@ export function NavBar(props: NavBarProps) {
                             />
                         </div>
                     </NavLink>
+                    {/* <NavLink to="/misc" aria-label="Miscellaneous hobbies and projects">
+              <div className="icobutton">
+                  <BookIcon
+                      color={color_background}
+                      filled={true}
+                  />
+              </div>
+            </NavLink> */}
                     <NavLink to="/connect" aria-label="Connect with Ansen">
                         <div className="icobutton">
                             <EnvelopeIcon
@@ -162,10 +196,10 @@ export function NavBar(props: NavBarProps) {
                             />
                         </div>
                     </NavLink>
-                </>
+                </nav>
             ) : (
                 // Tablet, Laptop, Desktop
-                <>
+                <nav>
                     <NavLink to="/" aria-label="Home Page">
                         <div className="icobutton">
                             <HomeIcon
@@ -186,6 +220,17 @@ export function NavBar(props: NavBarProps) {
                         </div>
                         <div className="textbutton">Portfolio</div>
                     </NavLink>
+                    {/* <NavLink to="/misc" aria-label="Miscellaneous hobbies and projects">
+              <div className="icobutton">
+                  <BookIcon
+                      color={color_background}
+                      filled={true}
+                  />
+              </div>
+              <div className="textbutton">
+                  Misc
+              </div>
+            </NavLink> */}
                     <NavLink to="/connect" aria-label="Connect with Ansen">
                         <div className="icobutton">
                             <EnvelopeIcon
@@ -196,7 +241,7 @@ export function NavBar(props: NavBarProps) {
                         </div>
                         <div className="textbutton">Connect</div>
                     </NavLink>
-                </>
+                </nav>
             )}
         </NavWrapper>
     );
