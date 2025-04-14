@@ -22,11 +22,11 @@ const Grid = styled.div`
 
 interface RootProps {
     children: React.ReactNode
-    title: string
 }
 
 export function Root(props: RootProps) {
-    const {children, title} = props
+    const {children} = props
+
     const mobile = window.matchMedia("(max-width: 425px)").matches
 
     return (
