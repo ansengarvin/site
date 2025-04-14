@@ -4,9 +4,7 @@ import { navWidthDesktop, navWidthLaptop, navWidthPhone } from "../lib/defines/n
 import { laptop, tablet, phone } from "../lib/defines/screenWidths";
 import { color_gradient_A, color_background, color_title, color_title_hover, color_title_active } from "../lib/defines/colors";
 import { HomeIcon } from "../lib/icons/HomeIcon";
-import { WorkIcon } from "../lib/icons/WorkIcon";
 import { BriefcaseIcon } from "../lib/icons/BriefcaseIcon";
-import { BookIcon } from "../lib/icons/BookIcon";
 import { EnvelopeIcon } from "../lib/icons/EnvelopeIcon";
 const NavWrapper = styled.div`
   grid-area: navarea;
