@@ -237,7 +237,7 @@ interface TrekPanelProps {
   children: React.ReactNode,
   title: string,
   mobile: boolean,
-  type: string
+  type?: string
 }
 
 
