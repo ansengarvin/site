@@ -20,7 +20,7 @@ const Grid = styled.div`
 `
 
 interface RootProps {
-    children: React.ReactNode
+    children?: React.ReactNode
 }
 
 export function Root(props: RootProps) {
