@@ -134,7 +134,12 @@ const NavWrapper = styled.div`
   }
 `
 
-export function NavBar(props) {
+interface NavBarProps {
+  mobile: boolean
+  type: string;
+}
+
+export function NavBar(props: NavBarProps) {
   const {mobile, type} = props
   if (type=="other") {
     return (
