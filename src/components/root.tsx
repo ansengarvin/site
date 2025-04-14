@@ -20,7 +20,12 @@ const Grid = styled.div`
     margin-right: 5px;
 `
 
-export function Root(props) {
+interface RootProps {
+    children: React.ReactNode
+    title: string
+}
+
+export function Root(props: RootProps) {
     const {children, title} = props
 
     const [mobile, setMobile] = useState(window.matchMedia("(max-width: 425px)").matches);
