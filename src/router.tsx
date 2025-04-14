@@ -5,7 +5,6 @@ import {Home} from "./routes/home.js"
 import {Projects} from "./routes/portfolio.js"
 import {Other} from "./routes/other.js"
 import {Connect} from "./routes/connect.js"
-import { Recipes } from "./routes/recipes.js"
 
 export const router = createBrowserRouter([
     {
@@ -24,8 +23,6 @@ export const router = createBrowserRouter([
         {path: "portfolio", element: <Projects />},
         {path: "misc", element: <Other />},
         {path: "connect", element: <Connect />},
-        // Other Routes
-        {path: "recipes", element: <Recipes />},
         // Redirects
         {path: "contact", element: <Navigate to="/connect"/>},
         {path: "projects", element: <Navigate to="/portfolio"/>},
