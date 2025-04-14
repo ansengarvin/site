@@ -1,7 +1,6 @@
 import styled from "@emotion/styled";
 import { TrekPanel } from "../components/trekpanel";
-import { useOutletContext } from "react-router-dom";
-import { color_offwhite, color_element } from "../lib/defines/colors"
+import { color_element } from "../lib/defines/colors"
 
 import {laptop, tablet, phone} from "../lib/defines/screenWidths"
 
@@ -79,9 +78,8 @@ const Icoplate = styled.div`
 `
 
 export function Other() {
-    const mobile = useOutletContext()
     return (
-        <TrekPanel title="MISC" mobile={mobile}>
+        <TrekPanel title="MISC">
             <h1>Other Stuff</h1>
             <MiscWrapper>
                 <MiscButton href="/recipes">  

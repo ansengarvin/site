@@ -1,9 +1,5 @@
 import styled from "@emotion/styled"
-
 import { TrekPanel } from "../components/trekpanel"
-import { useOutletContext } from "react-router-dom"
-import { color_projects } from "../lib/defines/colors"
-
 
 const ContactCard = styled.a`
     // Remove all default a styles
@@ -16,9 +12,8 @@ const ContactCard = styled.a`
 `
 
 export function Connect() {
-    const mobile = useOutletContext()
     return (
-        <TrekPanel title = "CONNECT" mobile={mobile}>
+        <TrekPanel title = "CONNECT">
             <h1>Want to get in touch?</h1>
             <h2>You can contact me at any of the following places:</h2>
             <ContactCard href="mailto:ansengarvin@gmail.com">ansengarvin@gmail.com</ContactCard>

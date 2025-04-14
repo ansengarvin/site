@@ -1,8 +1,8 @@
 import styled from "@emotion/styled";
 
-import { color_background, color_element, color_element_text, color_offwhite, color_title, color_gradient_A, color_title_hover, color_title_active} from "../lib/defines/colors";
+import { color_background, color_element, color_offwhite, color_title, color_gradient_A} from "../lib/defines/colors";
 import { laptop, tablet, phone } from "../lib/defines/screenWidths";
-import { NavLink, Outlet } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 
 import { NavBar } from "./navbar";
 import { navWidthDesktop, navWidthPhone, navWidthTablet } from "../lib/defines/navWidths";
@@ -233,8 +233,15 @@ const ContentFooterCap = styled.div`
   border-bottom-right-radius: 100%;
 `
 
-export function TrekPanel(props) {
-  const {children, title, mobile, type} = props
+interface TrekPanelProps {
+  children: React.ReactNode,
+  title: string
+}
+
+
+export function TrekPanel(props: TrekPanelProps) {
+  const {children, title} = props
+  const mobile = window.matchMedia("(max-width: 425px)").matches
   return (
     <PanelGrid>
         <Title>{title}</Title>
@@ -244,9 +251,7 @@ export function TrekPanel(props) {
         </RightCap>
 
         <NavHeader/>
-        <NavBar mobile={mobile} type={type}/>
-        
-
+        <NavBar mobile={mobile}/>
         <ContentHeader/>
         <PageContentWrapper>
           <PageContentBlackout>

@@ -1,6 +1,5 @@
 import { Outlet } from "react-router-dom"
-import { useState } from "react"
-import {Header} from "./header.jsx"
+import {Header} from "./header.js"
 import styled from "@emotion/styled"
 
 
@@ -20,17 +19,18 @@ const Grid = styled.div`
     margin-right: 5px;
 `
 
-export function Root(props) {
-    const {children, title} = props
+interface RootProps {
+    children?: React.ReactNode
+}
 
-    const [mobile, setMobile] = useState(window.matchMedia("(max-width: 425px)").matches);
-
+export function Root(props: RootProps) {
+    const {children} = props
     return (
         <>
             <main>
                 <Grid>
                     <Header/>
-                    {children || <Outlet context={mobile}/>}
+                    {children || <Outlet/>}
                 </Grid>
             </main>
         </>

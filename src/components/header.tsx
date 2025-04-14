@@ -1,8 +1,8 @@
 import { NavLink } from "react-router-dom";
 import styled from "@emotion/styled";
 
-import { color_element, color_element_text, color_offwhite, color_title } from "../lib/defines/colors";
-import { laptop, tablet, phone } from "../lib/defines/screenWidths";
+import { color_offwhite } from "../lib/defines/colors";
+import { tablet, phone } from "../lib/defines/screenWidths";
 
 const Headerbar = styled.div`
     grid-area: header;
