@@ -233,7 +233,15 @@ const ContentFooterCap = styled.div`
   border-bottom-right-radius: 100%;
 `
 
-export function TrekPanel(props) {
+interface TrekPanelProps {
+  children: React.ReactNode,
+  title: string,
+  mobile: boolean,
+  type: string
+}
+
+
+export function TrekPanel(props: TrekPanelProps) {
   const {children, title, mobile, type} = props
   return (
     <PanelGrid>
@@ -245,8 +253,6 @@ export function TrekPanel(props) {
 
         <NavHeader/>
         <NavBar mobile={mobile} type={type}/>
-        
-
         <ContentHeader/>
         <PageContentWrapper>
           <PageContentBlackout>
