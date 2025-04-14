@@ -1,17 +1,16 @@
-import styled from "@emotion/styled"
+import styled from "@emotion/styled";
 
-import { TrekPanel } from "../components/trekpanel"
-import {color_offwhite} from "../lib/defines/colors"
-import { tablet} from "../lib/defines/screenWidths";
-
+import { TrekPanel } from "../components/trekpanel";
+import { color_offwhite } from "../lib/defines/colors";
+import { tablet } from "../lib/defines/screenWidths";
 
 const ProjectCard = styled.a`
     // Remove all a styles
-    text-decoration: none;   
+    text-decoration: none;
 
     background-color: #1f2026;
     color: ${color_offwhite};
-    border-radius: 10px; 
+    border-radius: 10px;
     width: 400px;
     max-width: 100%;
     margin-bottom: 10px;
@@ -31,7 +30,6 @@ const ProjectCard = styled.a`
     }
 
     .foot {
-
     }
 
     h2 {
@@ -49,7 +47,7 @@ const ProjectCard = styled.a`
         padding: 0;
         font-style: italic;
         text-emphasis: normal;
-        
+
         @media (max-width: ${tablet}) {
             font-size: 0.95rem;
         }
@@ -81,37 +79,36 @@ const ProjectCard = styled.a`
     &:hover img {
         transform: scale(1.1);
     }
-`
+`;
 
 interface ProjectProps {
-    title: string,
-    subtitle: string,
-    techstack?: string,
-    description: string,
-    src: string,
-    alt: string,
-    href: string
+    title: string;
+    subtitle: string;
+    techstack?: string;
+    description: string;
+    src: string;
+    alt: string;
+    href: string;
 }
 
 function Project(props: ProjectProps) {
-    const {title, subtitle, techstack, description, src, alt, href} = props
+    const { title, subtitle, techstack, description, src, alt, href } = props;
     return (
         <ProjectCard href={href}>
             <div className="preview">
-                <img src = {src} alt = {alt} />
+                <img src={src} alt={alt} />
             </div>
             <div className="foot">
                 <h2>{title}</h2>
                 <h3>{subtitle}</h3>
                 <i>{techstack}</i>
-                <p>{description}</p>     
+                <p>{description}</p>
             </div>
-        </ProjectCard> 
-    )
+        </ProjectCard>
+    );
 }
 
 const ProjectWrapper = styled.div`
-    
     background-color: #1f2026;
     padding: 20px;
     border-radius: 20px;
@@ -120,11 +117,11 @@ const ProjectWrapper = styled.div`
     flex-wrap: wrap;
     justify-content: center;
     gap: 40px;
-`
+`;
 
 const Separator = styled.div`
     height: 100px;
-`
+`;
 
 export function Projects() {
     return (

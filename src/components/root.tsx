@@ -1,8 +1,6 @@
-import { Outlet } from "react-router-dom"
-import {Header} from "./header.js"
-import styled from "@emotion/styled"
-
-
+import { Outlet } from "react-router-dom";
+import { Header } from "./header.js";
+import styled from "@emotion/styled";
 
 const Grid = styled.div`
     display: grid;
@@ -17,22 +15,22 @@ const Grid = styled.div`
 
     margin-left: 5px;
     margin-right: 5px;
-`
+`;
 
 interface RootProps {
-    children?: React.ReactNode
+    children?: React.ReactNode;
 }
 
 export function Root(props: RootProps) {
-    const {children} = props
+    const { children } = props;
     return (
         <>
             <main>
                 <Grid>
-                    <Header/>
-                    {children || <Outlet/>}
+                    <Header />
+                    {children || <Outlet />}
                 </Grid>
             </main>
         </>
-    )
+    );
 }
