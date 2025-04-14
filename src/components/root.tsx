@@ -25,15 +25,12 @@ interface RootProps {
 
 export function Root(props: RootProps) {
     const {children} = props
-
-    const mobile = window.matchMedia("(max-width: 425px)").matches
-
     return (
         <>
             <main>
                 <Grid>
                     <Header/>
-                    {children || <Outlet context={mobile}/>}
+                    {children || <Outlet/>}
                 </Grid>
             </main>
         </>

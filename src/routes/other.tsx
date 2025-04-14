@@ -81,7 +81,7 @@ const Icoplate = styled.div`
 export function Other() {
     const mobile = useOutletContext()
     return (
-        <TrekPanel title="MISC" mobile={mobile}>
+        <TrekPanel title="MISC">
             <h1>Other Stuff</h1>
             <MiscWrapper>
                 <MiscButton href="/recipes">  

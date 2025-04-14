@@ -235,13 +235,13 @@ const ContentFooterCap = styled.div`
 
 interface TrekPanelProps {
   children: React.ReactNode,
-  title: string,
-  mobile: boolean
+  title: string
 }
 
 
 export function TrekPanel(props: TrekPanelProps) {
-  const {children, title, mobile} = props
+  const {children, title} = props
+  const mobile = window.matchMedia("(max-width: 425px)").matches
   return (
     <PanelGrid>
         <Title>{title}</Title>

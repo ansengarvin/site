@@ -128,7 +128,7 @@ const Separator = styled.div`
 export function Projects() {
     const mobile = useOutletContext()
     return (
-        <TrekPanel title = "PORTFOLIO" mobile = {mobile}>
+        <TrekPanel title = "PORTFOLIO">
             <h1>Professional Timeline</h1>
             <ProjectWrapper>
                 <Project
