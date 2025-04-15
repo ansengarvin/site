@@ -16,6 +16,7 @@ import { HomeIcon } from "../assets/icons/HomeIcon";
 import { BriefcaseIcon } from "../assets/icons/BriefcaseIcon";
 import { EnvelopeIcon } from "../assets/icons/EnvelopeIcon";
 import React from "react";
+import { BookIcon } from "../assets/icons/BookIcon";
 
 interface NavBarLinkProps {
     mobile: boolean;
@@ -59,10 +60,17 @@ export function NavBar(props: NavBarProps) {
             />
             <NavBarLink
                 mobile={mobile}
-                name="Portfolio"
+                name="Projects"
                 to="/portfolio"
-                aria="Ansen's Portfolio"
+                aria="Personal Projects"
                 Icon={BriefcaseIcon}
+            />
+            <NavBarLink
+                mobile={mobile}
+                name="Resume"
+                to="/resume"
+                aria="Personal Projects"
+                Icon={BookIcon}
             />
             <NavBarLink
                 mobile={mobile}
