@@ -15,6 +15,32 @@ import {
 import { HomeIcon } from "../assets/icons/HomeIcon";
 import { BriefcaseIcon } from "../assets/icons/BriefcaseIcon";
 import { EnvelopeIcon } from "../assets/icons/EnvelopeIcon";
+import React from "react";
+
+interface NavBarLinkProps {
+    mobile: boolean;
+    name: string;
+    to: string;
+    aria: string;
+    Icon: React.ComponentType<{color: string, filled: boolean, dim: string}>;
+}
+
+function NavBarLink(props: NavBarLinkProps) {
+    const {mobile, name, to, aria, Icon} = props
+
+    return (
+        <NavLink to={to} aria-label={aria}>
+            <div className="icobutton">
+                <Icon color={color_background} filled={true} dim={"85%"} />
+            </div>
+            {
+                mobile ?
+                <></> :
+                <div className="textbutton">{name}</div>
+            }
+        </NavLink>
+    )
+}
 
 interface NavBarProps {
     mobile: boolean;
@@ -24,76 +50,30 @@ export function NavBar(props: NavBarProps) {
     const { mobile } = props;
     return (
         <NavWrapper>
-            {mobile ? (
-                // Mobile
-                <>
-                    <NavLink to="/" aria-label="Home Page">
-                        <div className="icobutton">
-                            <HomeIcon
-                                color={color_background}
-                                filled={true}
-                                dim={"85%"}
-                            />
-                        </div>
-                    </NavLink>
-                    <NavLink to="/portfolio" aria-label="Ansen's Portfolio">
-                        <div className="icobutton">
-                            <BriefcaseIcon
-                                color={color_background}
-                                filled={true}
-                                dim={"85%"}
-                            />
-                        </div>
-                    </NavLink>
-                    <NavLink to="/connect" aria-label="Connect with Ansen">
-                        <div className="icobutton">
-                            <EnvelopeIcon
-                                color={color_background}
-                                filled={true}
-                                dim={"85%"}
-                            />
-                        </div>
-                    </NavLink>
-                </>
-            ) : (
-                // Tablet, Laptop, Desktop
-                <>
-                    <NavLink to="/" aria-label="Home Page">
-                        <div className="icobutton">
-                            <HomeIcon
-                                color={color_background}
-                                filled={true}
-                                dim={"85%"}
-                            />
-                        </div>
-                        <div className="textbutton">Home</div>
-                    </NavLink>
-                    <NavLink to="/portfolio" aria-label="Ansen's Portfolio">
-                        <div className="icobutton">
-                            <BriefcaseIcon
-                                color={color_background}
-                                filled={true}
-                                dim={"85%"}
-                            />
-                        </div>
-                        <div className="textbutton">Portfolio</div>
-                    </NavLink>
-                    <NavLink to="/connect" aria-label="Connect with Ansen">
-                        <div className="icobutton">
-                            <EnvelopeIcon
-                                color={color_background}
-                                filled={true}
-                                dim={"85%"}
-                            />
-                        </div>
-                        <div className="textbutton">Connect</div>
-                    </NavLink>
-                </>
-            )}
+            <NavBarLink
+                mobile={mobile}
+                name="Home"
+                to="/"
+                aria="Home Page"
+                Icon={HomeIcon}
+            />
+            <NavBarLink
+                mobile={mobile}
+                name="Portfolio"
+                to="/portfolio"
+                aria="Ansen's Portfolio"
+                Icon={BriefcaseIcon}
+            />
+            <NavBarLink
+                mobile={mobile}
+                name="Connect"
+                to="/connect"
+                aria="Connect with Ansen"
+                Icon={EnvelopeIcon}
+            />
         </NavWrapper>
-    );
+    )
 }
-
 
 const NavWrapper = styled.nav`
     margin-top: 80px;
