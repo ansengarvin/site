@@ -24,7 +24,7 @@ export const router = createBrowserRouter([
             { path: "portfolio", element: <Projects /> },
             { path: "misc", element: <Other /> },
             { path: "connect", element: <Connect /> },
-            { path: "resume", element: <CV />},
+            { path: "resume", element: <CV /> },
             // Redirects
             { path: "contact", element: <Navigate to="/connect" /> },
             { path: "projects", element: <Navigate to="/portfolio" /> },

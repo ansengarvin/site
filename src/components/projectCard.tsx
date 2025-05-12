@@ -1,6 +1,6 @@
-import styled from '@emotion/styled'
-import { color_offwhite } from '../lib/defines/colors';
-import { tablet } from '../lib/defines/screenWidths';
+import styled from "@emotion/styled";
+import { color_offwhite } from "../lib/defines/colors";
+import { tablet } from "../lib/defines/screenWidths";
 
 const ProjectCardStyle = styled.a`
     // Remove all a styles

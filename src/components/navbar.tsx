@@ -1,17 +1,8 @@
 import styled from "@emotion/styled";
 import { NavLink } from "react-router-dom";
-import {
-    navWidthDesktop,
-    navWidthLaptop,
-    navWidthPhone,
-} from "../lib/defines/navWidths";
+import { navWidthDesktop, navWidthLaptop, navWidthPhone } from "../lib/defines/navWidths";
 import { laptop, tablet, phone } from "../lib/defines/screenWidths";
-import {
-    color_background,
-    color_title,
-    color_title_hover,
-    color_title_active,
-} from "../lib/defines/colors";
+import { color_background, color_title, color_title_hover, color_title_active } from "../lib/defines/colors";
 import { HomeIcon } from "../assets/icons/HomeIcon";
 import { BriefcaseIcon } from "../assets/icons/BriefcaseIcon";
 import { EnvelopeIcon } from "../assets/icons/EnvelopeIcon";
@@ -23,24 +14,20 @@ interface NavBarLinkProps {
     name: string;
     to: string;
     aria: string;
-    Icon: React.ComponentType<{color: string, filled: boolean, dim: string}>;
+    Icon: React.ComponentType<{ color: string; filled: boolean; dim: string }>;
 }
 
 function NavBarLink(props: NavBarLinkProps) {
-    const {mobile, name, to, aria, Icon} = props
+    const { mobile, name, to, aria, Icon } = props;
 
     return (
         <NavLink to={to} aria-label={aria}>
             <div className="icobutton">
                 <Icon color={color_background} filled={true} dim={"85%"} />
             </div>
-            {
-                mobile ?
-                <></> :
-                <div className="textbutton">{name}</div>
-            }
+            {mobile ? <></> : <div className="textbutton">{name}</div>}
         </NavLink>
-    )
+    );
 }
 
 interface NavBarProps {
@@ -51,36 +38,12 @@ export function NavBar(props: NavBarProps) {
     const { mobile } = props;
     return (
         <NavWrapper>
-            <NavBarLink
-                mobile={mobile}
-                name="Home"
-                to="/"
-                aria="Home Page"
-                Icon={HomeIcon}
-            />
-            <NavBarLink
-                mobile={mobile}
-                name="Projects"
-                to="/portfolio"
-                aria="Personal Projects"
-                Icon={BriefcaseIcon}
-            />
-            <NavBarLink
-                mobile={mobile}
-                name="Resume"
-                to="/resume"
-                aria="Personal Projects"
-                Icon={BookIcon}
-            />
-            <NavBarLink
-                mobile={mobile}
-                name="Connect"
-                to="/connect"
-                aria="Connect with Ansen"
-                Icon={EnvelopeIcon}
-            />
+            <NavBarLink mobile={mobile} name="Home" to="/" aria="Home Page" Icon={HomeIcon} />
+            <NavBarLink mobile={mobile} name="Projects" to="/portfolio" aria="Personal Projects" Icon={BriefcaseIcon} />
+            <NavBarLink mobile={mobile} name="Resume" to="/resume" aria="Personal Projects" Icon={BookIcon} />
+            <NavBarLink mobile={mobile} name="Connect" to="/connect" aria="Connect with Ansen" Icon={EnvelopeIcon} />
         </NavWrapper>
-    )
+    );
 }
 
 const NavWrapper = styled.nav`
