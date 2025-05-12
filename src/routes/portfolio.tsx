@@ -21,10 +21,22 @@ const Separator = styled.div`
 export function Projects() {
     return (
         <TrekPanel title="PROJECTS">
-            <h1>Projects</h1>
+            <h1>Portfolio</h1>
             <ProjectWrapper>
                 <ProjectCard
-                    title="Kilocal Nutrition Tracker"
+                    title="Gravity"
+                    subtitle="Interactive 3D Orbital Simulator"
+                    techstack="React, TypeScript, Redux, WebGL"
+                    description="
+                        A fully interactive orbital physics simulator. Built in React using a custom WebGL rendering engine,
+                        with Redux for management of graphical and simulation setting state. 
+                    "
+                    src="/gravity.png"
+                    alt="Gravity Screenshot"
+                    href="https://gravity.ansengarvin.com"
+                />
+                <ProjectCard
+                    title="Nutrition Tracker"
                     subtitle="Full-Stack Application"
                     techstack="Typescript, React.js, Express.js, PostgreSQL, nginx, AWS, Firebase(auth)"
                     description="
@@ -45,10 +57,13 @@ export function Projects() {
                     href="https://countingmouse.itch.io/powermecharena"
                 />
                 <ProjectCard
-                    title="N-Body Simulation"
-                    subtitle="Personal Project"
+                    title="Orbital Simulation (C++)"
+                    subtitle="Parallel Computation Experiment"
                     techstack="C++, OpenGL, OpenMP, SIMD"
-                    description="A direct gravitational simulation of the N-Body problem, visualized using OpenGL and parallelized with OpenMP and SIMD intrinsics"
+                    description="
+                        A gravitational simulation of orbital physics built in C++ to experiement with parallel computing.
+                        Utilizing OpenMP multicore and SIMD intrinsics yielded a 15x speedup in simulation tick rate.
+                    "
                     src="/nbody.png"
                     alt="N-Body Simulation Screenshot"
                     href="https://www.youtube.com/watch?v=XzA_6H3h5Cg"
