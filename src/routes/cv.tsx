@@ -3,7 +3,6 @@ import styled from "@emotion/styled";
 import { TrekPanel } from "../components/trekpanel";
 import { ProjectCard } from "../components/projectCard";
 
-
 const ProjectWrapper = styled.div`
     background-color: #1f2026;
     padding: 20px;

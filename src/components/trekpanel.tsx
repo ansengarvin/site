@@ -1,12 +1,7 @@
 import styled from "@emotion/styled";
 import { Outlet } from "react-router-dom";
 import { NavBar } from "./navbar";
-import {
-    color_background,
-    color_element,
-    color_gradient_A,
-    color_title,
-} from "../lib/defines/colors";
+import { color_background, color_element, color_gradient_A, color_title } from "../lib/defines/colors";
 import { laptop, phone, tablet } from "../lib/defines/screenWidths";
 
 interface TrekPanelProps {
@@ -40,12 +35,7 @@ const Backdrop = styled.div`
     //background-color: ${color_element};
 
     background: #d69744;
-    background: radial-gradient(
-        ellipse 100% 60%,
-        ${color_title} 0%,
-        ${color_gradient_A} 50%,
-        ${color_element} 100%
-    );
+    background: radial-gradient(ellipse 100% 60%, ${color_title} 0%, ${color_gradient_A} 50%, ${color_element} 100%);
     color: white;
     border-top-left-radius: 100px;
     //media radii for top left
