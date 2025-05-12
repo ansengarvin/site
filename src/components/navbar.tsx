@@ -40,7 +40,13 @@ export function NavBar(props: NavBarProps) {
     return (
         <NavWrapper>
             <NavBarLink mobile={mobile} name="Home" to="/" aria="Home Page" Icon={HomeIcon} />
-            <NavBarLink mobile={mobile} name="Portfolio" to="/portfolio" aria="Personal Projects" Icon={BriefcaseIcon} />
+            <NavBarLink
+                mobile={mobile}
+                name="Portfolio"
+                to="/portfolio"
+                aria="Personal Projects"
+                Icon={BriefcaseIcon}
+            />
             <NavBarLink mobile={mobile} name="Resume" to="/resume" aria="Personal Projects" Icon={BookIcon} />
             <NavBarLink mobile={mobile} name="Connect" to="/connect" aria="Connect with Ansen" Icon={EnvelopeIcon} />
         </NavWrapper>
