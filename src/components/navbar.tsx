@@ -8,13 +8,14 @@ import { BriefcaseIcon } from "../assets/icons/BriefcaseIcon";
 import { EnvelopeIcon } from "../assets/icons/EnvelopeIcon";
 import React from "react";
 import { BookIcon } from "../assets/icons/BookIcon";
+import { IconProps } from "../assets/icons/common/IconProps";
 
 interface NavBarLinkProps {
     mobile: boolean;
     name: string;
     to: string;
     aria: string;
-    Icon: React.ComponentType<{ color: string; filled: boolean; dim: string }>;
+    Icon: React.ComponentType<IconProps>;
 }
 
 function NavBarLink(props: NavBarLinkProps) {
@@ -39,7 +40,7 @@ export function NavBar(props: NavBarProps) {
     return (
         <NavWrapper>
             <NavBarLink mobile={mobile} name="Home" to="/" aria="Home Page" Icon={HomeIcon} />
-            <NavBarLink mobile={mobile} name="Projects" to="/portfolio" aria="Personal Projects" Icon={BriefcaseIcon} />
+            <NavBarLink mobile={mobile} name="Portfolio" to="/portfolio" aria="Personal Projects" Icon={BriefcaseIcon} />
             <NavBarLink mobile={mobile} name="Resume" to="/resume" aria="Personal Projects" Icon={BookIcon} />
             <NavBarLink mobile={mobile} name="Connect" to="/connect" aria="Connect with Ansen" Icon={EnvelopeIcon} />
         </NavWrapper>
