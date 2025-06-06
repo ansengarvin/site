@@ -5,7 +5,7 @@ on:
 
 jobs:
     lint:
-        name: lint(prettier)
+        name: lint (eslint)
         runs-on: ubuntu-latest
         steps:
             - name: Checkout code
@@ -15,6 +15,37 @@ jobs:
               uses: actions/setup-node@v4
               with:
                   node-version: latest
+
+            # All jobs have different cache keys to avoid write conflicts during parallel execution
+            - name: Cache dependencies
+              uses: actions/cache@v4
+              with:
+                  key: ci-lint-node-modules-${{ hashFiles('**/package-lock.json') }}
+                  path: node_modules
+
+            - name: Install dependencies
+              run: npm install
+
+            - name: Run ESLint
+              run: npx eslint . --ext .js,.jsx,.ts,.tsx
+
+    formatting:
+        name: format (prettier)
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v4
+
+            - name: Set up Node.js
+              uses: actions/setup-node@v4
+              with:
+                  node-version: latest
+
+            - name: Cache dependencies
+              uses: actions/cache@v4
+              with:
+                  key: ci-format-node-modules-${{ hashFiles('**/package-lock.json') }}
+                  path: node_modules
 
             - name: Install dependencies
               run: npm install
@@ -33,6 +64,12 @@ jobs:
               uses: actions/setup-node@v4
               with:
                   node-version: latest
+
+            - name: Cache dependencies
+              uses: actions/cache@v4
+              with:
+                  key: ci-build-node-modules-${{ hashFiles('**/package-lock.json') }}
+                  path: node_modules
 
             - name: Install dependencies
               run: npm install
