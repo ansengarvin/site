@@ -1,7 +1,8 @@
 import styled from "@emotion/styled";
 
-import { TrekPanel } from "../components/trekpanel";
-import { ProjectCard } from "../components/projectCard";
+import { TrekPanel } from "../components/TrekPanel";
+import { ProjectCard } from "../components/ProjectCard";
+import { projectImages } from "../assets/images/projects/projectImages";
 
 const ProjectWrapper = styled.div`
     background-color: #1f2026;
@@ -31,28 +32,40 @@ export function Projects() {
                         A fully interactive orbital physics simulator. Built in React using a custom WebGL rendering engine,
                         with Redux for management of graphical and simulation setting state. 
                     "
-                    src="/gravity.png"
+                    src={projectImages.gravity}
                     alt="Gravity Screenshot"
                     href="https://gravity.ansengarvin.com"
                 />
                 <ProjectCard
                     title="Nutrition Tracker"
                     subtitle="Full-Stack Application"
-                    techstack="Typescript, React.js, Express.js, PostgreSQL, nginx, AWS, Firebase(auth)"
+                    techstack="TypeScript, React, Redux, Docker, Azure Cloud"
                     description="
                         A nutrition tracker, built to make calorie and nutrient tracking as easy as possible.
-                        The website is currently offline, so this links to the repository.
+                        Hosted on the the cloud for as cheaply as possible, free for anyone to use.
                     "
-                    src="/kcal.png"
+                    src={projectImages.kcal}
                     alt="Kilocal Nutrition App Screenshot"
-                    href="https://github.com/ansengarvin/kilocal"
+                    href="https://kcal.ansengarvin.com/"
+                />
+                <ProjectCard
+                    title="React-Redux-TS Quickstart"
+                    subtitle="Boilerplate Template for Easy Site Creation"
+                    techstack="Vite, React, Redux, TypeScript, Emotion"
+                    description="
+                        I got tired of writing boilerplate, so I made a complete starter template combining React, TypeScript
+                        and Redux with Emotion styling and automated CI/CD workflows for quickly launching a project.
+                    "
+                    src={projectImages.quickStart}
+                    alt="Gravity Screenshot"
+                    href="https://github.com/ansengarvin/vite-react-redux-ts-quickstart"
                 />
                 <ProjectCard
                     title="PowerMech Arena"
                     subtitle="Bigmode Game Jam 2025"
                     techstack="C++, SDL"
                     description="A game where you battle bosses in a mech arena. Built with small team using a custom-made engine over the course of one week."
-                    src="/powermecharena.png"
+                    src={projectImages.powerMechArena}
                     alt="PowerMech Arena Splash Screen Picture"
                     href="https://countingmouse.itch.io/powermecharena"
                 />
@@ -64,7 +77,7 @@ export function Projects() {
                         A gravitational simulation of orbital physics built in C++ to experiement with parallel computing.
                         Utilizing OpenMP multicore and SIMD intrinsics yielded a 15x speedup in simulation tick rate.
                     "
-                    src="/nbody.png"
+                    src={projectImages.nBody}
                     alt="N-Body Simulation Screenshot"
                     href="https://www.youtube.com/watch?v=XzA_6H3h5Cg"
                 />
@@ -73,7 +86,7 @@ export function Projects() {
                     subtitle="Senior Capstone Project"
                     techstack="Svelte, Python(fastAPI), PostgreSQL"
                     description="Designed database to store venom proteins. Created interface to visualize protein structures. Deployed and used by OSU's Venom Biochemistry Lab."
-                    src="/gh_comp.png"
+                    src={projectImages.venome}
                     alt="Protein Structure 3D Model"
                     href="https://venome.cqls.oregonstate.edu/"
                 />

@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { TrekPanel } from "../components/trekpanel";
+import { TrekPanel } from "../components/TrekPanel";
 import { color_element } from "../lib/defines/colors";
 
 import { laptop, tablet, phone } from "../lib/defines/screenWidths";

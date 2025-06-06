@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { TrekPanel } from "../components/trekpanel";
+import { TrekPanel } from "../components/TrekPanel";
 
 const HomeStyle = styled.div`
     width: 100%;

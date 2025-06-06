@@ -10,7 +10,7 @@ import React from "react";
 import { BookIcon } from "../assets/icons/BookIcon";
 import { IconProps } from "../assets/icons/common/IconProps";
 
-interface NavBarLinkProps {
+interface NavbarLinkProps {
     mobile: boolean;
     name: string;
     to: string;
@@ -18,7 +18,7 @@ interface NavBarLinkProps {
     Icon: React.ComponentType<IconProps>;
 }
 
-function NavBarLink(props: NavBarLinkProps) {
+function NavbarLink(props: NavbarLinkProps) {
     const { mobile, name, to, aria, Icon } = props;
 
     return (
@@ -35,20 +35,20 @@ interface NavBarProps {
     mobile: boolean;
 }
 
-export function NavBar(props: NavBarProps) {
+export function Navbar(props: NavBarProps) {
     const { mobile } = props;
     return (
         <NavWrapper>
-            <NavBarLink mobile={mobile} name="Home" to="/" aria="Home Page" Icon={HomeIcon} />
-            <NavBarLink
+            <NavbarLink mobile={mobile} name="Home" to="/" aria="Home Page" Icon={HomeIcon} />
+            <NavbarLink
                 mobile={mobile}
                 name="Portfolio"
                 to="/portfolio"
                 aria="Personal Projects"
                 Icon={BriefcaseIcon}
             />
-            <NavBarLink mobile={mobile} name="Resume" to="/resume" aria="Personal Projects" Icon={BookIcon} />
-            <NavBarLink mobile={mobile} name="Connect" to="/connect" aria="Connect with Ansen" Icon={EnvelopeIcon} />
+            <NavbarLink mobile={mobile} name="Resume" to="/resume" aria="Personal Projects" Icon={BookIcon} />
+            <NavbarLink mobile={mobile} name="Connect" to="/connect" aria="Connect with Ansen" Icon={EnvelopeIcon} />
         </NavWrapper>
     );
 }
