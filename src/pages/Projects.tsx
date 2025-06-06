@@ -39,14 +39,26 @@ export function Projects() {
                 <ProjectCard
                     title="Nutrition Tracker"
                     subtitle="Full-Stack Application"
-                    techstack="Typescript, React.js, Express.js, PostgreSQL, nginx, AWS, Firebase(auth)"
+                    techstack="TypeScript, React, Redux, Docker, Azure Cloud"
                     description="
                         A nutrition tracker, built to make calorie and nutrient tracking as easy as possible.
-                        The website is currently offline, so this links to the repository.
+                        Hosted on the the cloud for as cheaply as possible, free for anyone to use.
                     "
                     src={projectImages.kcal}
                     alt="Kilocal Nutrition App Screenshot"
-                    href="https://github.com/ansengarvin/kilocal"
+                    href="https://kcal.ansengarvin.com/"
+                />
+                <ProjectCard
+                    title="React-Redux-TS Quickstart"
+                    subtitle="Boilerplate Template for Easy Site Creation"
+                    techstack="Vite, React, Redux, TypeScript, Emotion"
+                    description="
+                        I got tired of writing boilerplate, so I made a complete starter template combining React, TypeScript
+                        and Redux with Emotion styling and automated CI/CD workflows for quickly launching a project.
+                    "
+                    src={projectImages.quickStart}
+                    alt="Gravity Screenshot"
+                    href="https://github.com/ansengarvin/vite-react-redux-ts-quickstart"
                 />
                 <ProjectCard
                     title="PowerMech Arena"
