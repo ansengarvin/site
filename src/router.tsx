@@ -1,11 +1,11 @@
 import { createBrowserRouter, Navigate } from "react-router-dom";
 import { Root } from "./components/root.tsx";
 import { TrekPanel } from "./components/trekpanel.jsx";
-import { Home } from "./routes/home.tsx";
-import { Projects } from "./routes/portfolio.tsx";
-import { Other } from "./routes/other.tsx";
-import { Connect } from "./routes/connect.tsx";
-import { CV } from "./routes/cv.tsx";
+import { Home } from "./pages/Home.tsx";
+import { Projects } from "./pages/Portfolio.tsx";
+import { Other } from "./pages/Other.tsx";
+import { Connect } from "./pages/Connect.tsx";
+import { CV } from "./pages/CV.tsx";
 
 export const router = createBrowserRouter([
     {
