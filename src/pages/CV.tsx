@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 
-import { TrekPanel } from "../components/trekpanel";
-import { ProjectCard } from "../components/projectCard";
+import { TrekPanel } from "../components/TrekPanel";
+import { ProjectCard } from "../components/ProjectCard";
 
 const ProjectWrapper = styled.div`
     background-color: #1f2026;

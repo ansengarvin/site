@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 import { Outlet } from "react-router-dom";
-import { NavBar } from "./navbar";
+import { Navbar } from "./NavBar";
 import { color_background, color_element, color_gradient_A, color_title } from "../lib/defines/colors";
 import { laptop, phone, tablet } from "../lib/defines/screenWidths";
 
@@ -14,7 +14,7 @@ export function TrekPanel(props: TrekPanelProps) {
     const mobile = window.matchMedia("(max-width: 770px)").matches;
     return (
         <Backdrop>
-            <NavBar mobile={mobile} />
+            <Navbar mobile={mobile} />
             <Title>
                 {title}
                 <div className="cap"></div>

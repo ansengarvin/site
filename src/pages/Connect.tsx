@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { TrekPanel } from "../components/trekpanel";
+import { TrekPanel } from "../components/TrekPanel";
 
 const ContactCard = styled.a`
     // Remove all default a styles

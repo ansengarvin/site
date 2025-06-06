@@ -1,8 +1,8 @@
 import { createBrowserRouter, Navigate } from "react-router-dom";
-import { Root } from "./components/root.tsx";
-import { TrekPanel } from "./components/trekpanel.jsx";
+import { Root } from "./components/Root.tsx";
+import { TrekPanel } from "./components/TrekPanel.js";
 import { Home } from "./pages/Home.tsx";
-import { Projects } from "./pages/Portfolio.tsx";
+import { Projects } from "./pages/Projects.tsx";
 import { Other } from "./pages/Other.tsx";
 import { Connect } from "./pages/Connect.tsx";
 import { CV } from "./pages/CV.tsx";
